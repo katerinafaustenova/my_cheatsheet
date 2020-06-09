@@ -40,13 +40,13 @@ const code_navbar = `function Navbar() {
     <nav className="nav_left">
       <ul>
         <li>
-          <Link to="/ReactRouter">React Router</Link>
+          <NavLink to="/ReactRouter">React Router</NavLink>
         </li>
         <li>
-          <Link to="/Errors">Errors</Link>
+          <NavLink to="/Errors">Errors</NavLink>
         </li>
         <li>
-          <Link to="/CSSTemplates">CSS Templates</Link>
+          <NavLink to="/CSSTemplates">CSS Templates</NavLink>
         </li>
       </ul>
     </nav>
@@ -55,7 +55,7 @@ const code_navbar = `function Navbar() {
 
 function ReactRouter() {
   return (
-    <div>
+    <React.Fragment>
       <h1>React Router</h1>
       <h2>Installation</h2>
       <p>npm install react-router-dom</p>
@@ -78,7 +78,7 @@ function ReactRouter() {
           {code_navbar}
         </SyntaxHighlighter>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

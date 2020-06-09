@@ -3,9 +3,9 @@ import "./CSSTemplates.css";
 
 function CSSTemplates() {
   return (
-    <div>
+    <React.Fragment>
       <h1>CSS Templates</h1>
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,5 +1,29 @@
 .nav_left {
-  width: 350px;
-  border: 1px solid red;
-  padding: 20px;
+  width: 250px;
+  padding: 25px 18px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--text_color);
+  cursor: pointer;
+  line-height: 20px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+li a:hover {
+  color: var(--link_color);
+  font-size: 18px;
+}
+
+.active {
+  color: var(--link_color);
+  font-size: 18px;
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 function Errors() {
   return (
-    <div>
+    <React.Fragment>
       <h1>Errors</h1>
       <h2>'React' must be in scope when using JSX react/react-in-jsx-scope</h2>
       <ol>
@@ -10,7 +10,7 @@ function Errors() {
         <li>Another reason</li>
         <li>Another reason</li>
       </ol>
-    </div>
+    </React.Fragment>
   );
 }
 

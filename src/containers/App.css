@@ -1,8 +1,15 @@
 .app {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: var(--main_color);
+  color: var(--text_color);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 1px;
 }
 
 .app_content {
@@ -11,4 +18,14 @@
   flex-direction: row;
   max-height: 100%;
   flex: 1 1 auto;
+}
+
+h1 {
+  font-weight: 100;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 20px;
 }
