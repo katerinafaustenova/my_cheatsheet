@@ -11,7 +11,7 @@ function Content() {
   return (
     <div className="content_right">
       <Switch>
-        <Route path="/ReactRouter">
+        <Route path="/React/ReactRouter">
           <ReactRouter />
         </Route>
         <Route path="/Errors">

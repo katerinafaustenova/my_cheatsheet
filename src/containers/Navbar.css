@@ -1,6 +1,6 @@
 .nav_left {
   width: 250px;
-  padding: 25px 18px;
+  padding: 25px 0px;
 }
 
 ul {
@@ -11,34 +11,44 @@ ul {
 }
 
 li a {
+  padding: 0 18px;
+  border-left: 2px solid #ffffff00;
   text-decoration: none;
   color: var(--text_color);
   cursor: pointer;
-  line-height: 20px;
+  line-height: 45px;
   display: block;
-  margin-bottom: 15px;
 }
 
 li a:hover {
-  color: var(--link_color);
-  font-size: 20px;
+  color: var(--active_color);
+  background-color: var(--content_color);
 }
 
+.active,
+.activeTitle {
+  color: var(--active_color);
+  border-left: 2px solid var(--active_color);
+}
 .active {
-  color: var(--link_color);
-  font-size: 20px;
+  background-color: var(--content_color);
 }
 
+.dropdown {
+  padding-bottom: 10px;
+}
 .dropdown a {
-  padding-left: 20px;
+  padding-left: 30px;
   font-size: 16px;
+  line-height: 35px;
 }
 
 .dropdown a:hover {
-  padding-left: 20px;
-  font-size: 18px;
+  padding-left: 30px;
+  border-left: 2px solid var(--content_color);
 }
 .dropdown .active {
-  color: red;
-  font-size: 18px;
+  background-color: var(--content_color);
+  border-left: 2px solid var(--content_color);
+  padding-left: 30px;
 }

@@ -24,7 +24,9 @@ class Navbar extends React.Component {
           <li>
             <NavLink
               to="/HTML"
+              exact
               activeClassName="active"
+              className={this.state.open === "HTML" && "activeTitle"}
               onClick={() => this.handleClick("HTML")}
             >
               HTML
@@ -44,12 +46,53 @@ class Navbar extends React.Component {
             )}
           </li>
           <li>
-            <NavLink to="/CSS" onClick={() => this.handleClick("CSS")}>
+            <NavLink
+              to="/CSS"
+              exact
+              onClick={() => this.handleClick("CSS")}
+              className={this.state.open === "CSS" && "activeTitle"}
+            >
               CSS
             </NavLink>
             {this.state.open === "CSS" && (
               <div className="dropdown">
-                <NavLink to="/CSS/1">CSS 1</NavLink>
+                <NavLink to="/CSS/1" exact>
+                  CSS 1
+                </NavLink>
+              </div>
+            )}
+          </li>
+          <li>
+            <NavLink
+              to="/JS"
+              exact
+              onClick={() => this.handleClick("JS")}
+              className={this.state.open === "JS" && "activeTitle"}
+            >
+              JS
+            </NavLink>
+            {this.state.open === "JS" && (
+              <div className="dropdown">
+                <NavLink to="/JS/1" exact>
+                  JS 1
+                </NavLink>
+              </div>
+            )}
+          </li>
+          <li>
+            <NavLink
+              to="/React"
+              exact
+              onClick={() => this.handleClick("React")}
+              className={this.state.open === "React" && "activeTitle"}
+            >
+              React
+            </NavLink>
+            {this.state.open === "React" && (
+              <div className="dropdown">
+                <NavLink to="/React/ReactRouter" exact>
+                  React Router
+                </NavLink>
               </div>
             )}
           </li>
