@@ -7,6 +7,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 18px;
 }
 
 li a {
@@ -20,10 +21,24 @@ li a {
 
 li a:hover {
   color: var(--link_color);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .active {
   color: var(--link_color);
+  font-size: 20px;
+}
+
+.dropdown a {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.dropdown a:hover {
+  padding-left: 20px;
+  font-size: 18px;
+}
+.dropdown .active {
+  color: red;
   font-size: 18px;
 }
