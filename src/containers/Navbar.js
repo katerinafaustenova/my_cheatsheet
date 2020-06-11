@@ -26,7 +26,7 @@ class Navbar extends React.Component {
               to="/HTML"
               exact
               activeClassName="active"
-              className={this.state.open === "HTML" && "activeTitle"}
+              className={this.state.open === "HTML" ? "activeTitle" : null}
               onClick={() => this.handleClick("HTML")}
             >
               HTML
@@ -50,7 +50,7 @@ class Navbar extends React.Component {
               to="/CSS"
               exact
               onClick={() => this.handleClick("CSS")}
-              className={this.state.open === "CSS" && "activeTitle"}
+              className={this.state.open === "CSS" ? "activeTitle" : null}
             >
               CSS
             </NavLink>
@@ -67,7 +67,7 @@ class Navbar extends React.Component {
               to="/JS"
               exact
               onClick={() => this.handleClick("JS")}
-              className={this.state.open === "JS" && "activeTitle"}
+              className={this.state.open === "JS" ? "activeTitle" : null}
             >
               JS
             </NavLink>
@@ -84,7 +84,7 @@ class Navbar extends React.Component {
               to="/React"
               exact
               onClick={() => this.handleClick("React")}
-              className={this.state.open === "React" && "activeTitle"}
+              className={this.state.open === "React" ? "activeTitle" : null}
             >
               React
             </NavLink>

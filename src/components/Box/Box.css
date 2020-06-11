@@ -1,0 +1,11 @@
+.box {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgb(109, 212, 253);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+}

@@ -9,13 +9,13 @@ import Content from "./Content";
 function App() {
   return (
     <div className="app">
-      <Header />
-      <div className="app_content">
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <div className="app_content">
           <Navbar />
           <Content />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

@@ -8,3 +8,12 @@ body,
 * {
   box-sizing: border-box;
 }
+
+a {
+  color: var(--link_color);
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+}
