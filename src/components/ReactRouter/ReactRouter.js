@@ -67,7 +67,7 @@ function ReactRouter() {
         so people using the keyboard for navigation or screen readers will still
         be able to use this.
       </p>
-      <div className="syntax_highlight">
+      <div className="syntax_highlight_react_router">
         <SyntaxHighlighter language="javascript" style={xonokai}>
           {code_app}
         </SyntaxHighlighter>

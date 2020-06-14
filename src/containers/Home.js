@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import Box from "./../components/Box/Box";
 import "./Home.css";
 
@@ -9,9 +8,9 @@ class Home extends React.Component {
     super();
     this.state = {
       best: [
-        { category: "React", sub: "ReactRouter" },
-        { category: "CSS", sub: "Flex" },
-        { category: "JS", sub: "IfElse" },
+        { category: "React", sub: "React Router" },
+        { category: "React", sub: "React State" },
+        { category: "JS", sub: "If Else" },
       ],
     };
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import ReactRouter from "../components/ReactRouter/ReactRouter";
+import ReactState from "../components/ReactState/ReactState";
 import Errors from "../components/Errors/Errors";
 import CSSTemplates from "../components/CSSTemplates/CSSTemplates";
 import Home from "./Home";
@@ -18,6 +19,9 @@ function Content() {
         </Route>
         <Route path="/React/ReactRouter">
           <ReactRouter />
+        </Route>
+        <Route path="/React/ReactState">
+          <ReactState />
         </Route>
         <Route path="/Errors">
           <Errors />

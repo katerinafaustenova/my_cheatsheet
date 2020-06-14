@@ -93,6 +93,9 @@ class Navbar extends React.Component {
                 <NavLink to="/React/ReactRouter" exact>
                   React Router
                 </NavLink>
+                <NavLink to="/React/ReactState" exact>
+                  React State
+                </NavLink>
               </div>
             )}
           </li>
