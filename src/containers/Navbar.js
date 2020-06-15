@@ -90,10 +90,10 @@ class Navbar extends React.Component {
             </NavLink>
             {this.state.open === "React" && (
               <div className="dropdown">
-                <NavLink to="/React/ReactRouter" exact>
+                <NavLink to="/React/React_Router" exact>
                   React Router
                 </NavLink>
-                <NavLink to="/React/ReactState" exact>
+                <NavLink to="/React/React_State" exact>
                   React State
                 </NavLink>
               </div>

@@ -17,10 +17,10 @@ function Content() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/React/ReactRouter">
+        <Route path="/React/React_Router">
           <ReactRouter />
         </Route>
-        <Route path="/React/ReactState">
+        <Route path="/React/React_State">
           <ReactState />
         </Route>
         <Route path="/Errors">
