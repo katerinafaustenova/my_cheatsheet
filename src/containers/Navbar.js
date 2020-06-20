@@ -23,64 +23,6 @@ class Navbar extends React.Component {
         <ul>
           <li>
             <NavLink
-              to="/HTML"
-              exact
-              activeClassName="active"
-              className={this.state.open === "HTML" ? "activeTitle" : null}
-              onClick={() => this.handleClick("HTML")}
-            >
-              HTML
-            </NavLink>
-            {this.state.open === "HTML" && (
-              <div className="dropdown">
-                <NavLink to="/HTML/1" exact>
-                  HTML 1
-                </NavLink>
-                <NavLink to="/HTML/2" exact>
-                  HTML 2
-                </NavLink>
-                <NavLink to="/HTML/3" exact>
-                  HTML 3
-                </NavLink>
-              </div>
-            )}
-          </li>
-          <li>
-            <NavLink
-              to="/CSS"
-              exact
-              onClick={() => this.handleClick("CSS")}
-              className={this.state.open === "CSS" ? "activeTitle" : null}
-            >
-              CSS
-            </NavLink>
-            {this.state.open === "CSS" && (
-              <div className="dropdown">
-                <NavLink to="/CSS/1" exact>
-                  CSS 1
-                </NavLink>
-              </div>
-            )}
-          </li>
-          <li>
-            <NavLink
-              to="/JS"
-              exact
-              onClick={() => this.handleClick("JS")}
-              className={this.state.open === "JS" ? "activeTitle" : null}
-            >
-              JS
-            </NavLink>
-            {this.state.open === "JS" && (
-              <div className="dropdown">
-                <NavLink to="/JS/1" exact>
-                  JS 1
-                </NavLink>
-              </div>
-            )}
-          </li>
-          <li>
-            <NavLink
               to="/React"
               exact
               onClick={() => this.handleClick("React")}
@@ -90,11 +32,14 @@ class Navbar extends React.Component {
             </NavLink>
             {this.state.open === "React" && (
               <div className="dropdown">
-                <NavLink to="/React/React_Router" exact>
-                  React Router
+                <NavLink to="/React/Router" exact>
+                  Router
                 </NavLink>
-                <NavLink to="/React/React_State" exact>
-                  React State
+                <NavLink to="/React/State" exact>
+                  State
+                </NavLink>
+                <NavLink to="/React/Countdown" exact>
+                  Countdown
                 </NavLink>
               </div>
             )}
