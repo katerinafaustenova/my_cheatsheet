@@ -77,31 +77,6 @@ function ReactRouter() {
         <SyntaxHighlighter language="javascript" style={xonokai}>
           {code_navbar}
         </SyntaxHighlighter>
-
-        <h1>React Router</h1>
-        <h2>Installation</h2>
-        <p>npm install react-router-dom</p>
-        <h2>Usage</h2>
-        <p>
-          2 “pages” handled by the router: a home page, an about page. As you
-          click around on the different Links, the router renders the matching
-          Route. Behind the scenes a Link renders an anchor tag with a real
-          href, so people using the keyboard for navigation or screen readers
-          will still be able to use this.
-        </p>
-
-        <div id="nvm">NVM</div>
-        <h1>React Router</h1>
-        <h2>Installation</h2>
-        <p>npm install react-router-dom</p>
-        <h2>Usage</h2>
-        <p>
-          2 “pages” handled by the router: a home page, an about page. As you
-          click around on the different Links, the router renders the matching
-          Route. Behind the scenes a Link renders an anchor tag with a real
-          href, so people using the keyboard for navigation or screen readers
-          will still be able to use this.
-        </p>
       </div>
     </React.Fragment>
   );

@@ -6,10 +6,10 @@ export class Countdown extends React.Component {
   constructor() {
     super();
     this.state = {
-      days: undefined,
-      hours: undefined,
-      minutes: undefined,
-      seconds: undefined,
+      days: null,
+      hours: null,
+      minutes: null,
+      seconds: null,
     };
   }
 
@@ -36,7 +36,7 @@ export class Countdown extends React.Component {
   render() {
     const { days, hours, minutes, seconds } = this.state;
 
-    if (!seconds) {
+    if (hours + minutes + seconds === "0") {
       return <div>Konec odpočtu!</div>;
     }
 
