@@ -56,7 +56,7 @@ const code_navbar = `function Navbar() {
 function ReactRouter() {
   return (
     <React.Fragment>
-      <h1>React Router</h1>
+      <h1>Router</h1>
       <h2>Installation</h2>
       <p>npm install react-router-dom</p>
       <h2>Usage</h2>

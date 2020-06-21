@@ -5,6 +5,8 @@ import ReactRouter from "../components/ReactRouter/ReactRouter";
 import ReactState from "../components/ReactState/ReactState";
 import CountdownPage from "../components/Countdown/CountdownPage";
 import Clock from "../components/Clock/Clock";
+import TipCalculator from "../components/TipCalculator/TipCalculator";
+
 import "./Content.css";
 
 // A <Switch> looks through its children <Route>s and renders the first one that matches the current URL.
@@ -12,7 +14,8 @@ import "./Content.css";
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/home" />
+      {/* <Redirect to="/home" /> */}
+      <Redirect to="/React/TipCalculator" />
       <Switch>
         <Route path="/home">
           <Home />
@@ -28,6 +31,9 @@ function Content() {
         </Route>
         <Route path="/React/Clock">
           <Clock />
+        </Route>
+        <Route path="/React/TipCalculator">
+          <TipCalculator />
         </Route>
       </Switch>
     </div>

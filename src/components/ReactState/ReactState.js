@@ -35,7 +35,7 @@ const code_home = `class Home extends React.Component {
 function ReactState() {
   return (
     <React.Fragment>
-      <h1>React State</h1>
+      <h1>State</h1>
       <p>Description</p>
       <div className="syntax_highlight_react_state">
         <SyntaxHighlighter language="javascript" style={xonokai}>

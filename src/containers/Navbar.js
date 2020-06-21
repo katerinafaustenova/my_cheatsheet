@@ -44,6 +44,9 @@ class Navbar extends React.Component {
                 <NavLink to="/React/Clock" exact>
                   Clock
                 </NavLink>
+                <NavLink to="/React/TipCalculator" exact>
+                  Tip Calculator
+                </NavLink>
               </div>
             )}
           </li>
