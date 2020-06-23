@@ -8,9 +8,8 @@ class Home extends React.Component {
     super();
     this.state = {
       best: [
-        { category: "React", sub: "Router" },
-        { category: "React", sub: "State" },
-        { category: "React", sub: "Countdown" },
+        { category: "React", sub: "Router", title: "Router" },
+        { category: "React", sub: "StateProps", title: "State and Props" },
       ],
     };
   }
@@ -22,7 +21,7 @@ class Home extends React.Component {
             to={`/${item.category}/${item.sub}`}
             key={`/${item.category}/${item.sub}`}
           >
-            <Box category={item.category} sub={item.sub} />
+            <Box title={item.title === "" ? item.sub : item.title} />
           </NavLink>
         ))}
       </div>

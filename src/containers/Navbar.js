@@ -6,7 +6,7 @@ class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      open: "",
+      open: "React",
     };
   }
 
@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     if (this.state.open !== par) {
       return this.setState(() => ({ open: par }));
     }
-    this.setState(() => ({ open: "" }));
+    // this.setState(() => ({ open: "" }));
   };
 
   render() {
@@ -30,25 +30,27 @@ class Navbar extends React.Component {
             >
               React
             </NavLink>
-            {this.state.open === "React" && (
-              <div className="dropdown">
-                <NavLink to="/React/Router" exact>
-                  Router
-                </NavLink>
-                <NavLink to="/React/State" exact>
-                  State
-                </NavLink>
-                <NavLink to="/React/Countdown" exact>
-                  Countdown
-                </NavLink>
-                <NavLink to="/React/Clock" exact>
-                  Clock
-                </NavLink>
-                <NavLink to="/React/TipCalculator" exact>
-                  Tip Calculator
-                </NavLink>
-              </div>
-            )}
+
+            <div className="dropdown">
+              <NavLink to="/React/Clock" exact>
+                Clock
+              </NavLink>
+              <NavLink to="/React/Countdown" exact>
+                Countdown
+              </NavLink>
+              <NavLink to="/React/Router" exact>
+                Router
+              </NavLink>
+              <NavLink to="/React/StateProps" exact>
+                State and Props
+              </NavLink>
+              <NavLink to="/React/TipCalculator" exact>
+                Tip Calculator
+              </NavLink>
+            </div>
+            {/* {this.state.open === "React" && (
+                <span>hide / show</span>
+            )} */}
           </li>
         </ul>
       </nav>

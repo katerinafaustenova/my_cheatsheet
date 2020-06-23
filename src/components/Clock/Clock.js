@@ -1,4 +1,5 @@
 import React from "react";
+import "./Clock.css";
 
 class Clock extends React.Component {
   constructor() {
@@ -52,19 +53,23 @@ class Clock extends React.Component {
 
   renderTime() {
     const { hours } = this.state;
-
     if (hours === null) {
       return <p>Loading</p>;
     }
-    return <div>{`${hours}:${this.getMinutes()}:${this.getSeconds()}`}</div>;
+    return (
+      <div className="dawdwa">
+        <div className="nvm">{hours}</div>
+        <div className="nvm">{this.getMinutes()}</div>
+        <div className="nvm">{this.getSeconds()}</div>
+      </div>
+    );
   }
 
   render() {
     return (
       <React.Fragment>
         <h1>Clock</h1>
-        <p>Description</p>
-        {this.renderTime()}
+        <div className="clock">{this.renderTime()}</div>
       </React.Fragment>
     );
   }
