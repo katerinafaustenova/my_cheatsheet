@@ -37,7 +37,11 @@ export class Countdown extends React.Component {
     const { days, hours, minutes, seconds } = this.state;
 
     if (hours + minutes + seconds === "0") {
-      return <div>Konec odpočtu!</div>;
+      return <div className="countdown-wrapper">Konec odpočtu!</div>;
+    }
+
+    if (seconds === null || minutes === null) {
+      return <div className="countdown-wrapper">Loading...</div>;
     }
 
     return (

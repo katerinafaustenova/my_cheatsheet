@@ -12,7 +12,9 @@ function App() {
         <Header />
         <div className="app_content">
           <Navbar />
-          <Content />
+          <div className="app_flexRows">
+            <Content />
+          </div>
         </div>
       </BrowserRouter>
     </div>
