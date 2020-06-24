@@ -19,6 +19,12 @@
   max-height: 100%;
   flex: 1 1 auto;
 }
+.app_flexRows {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
 
 h1 {
   font-weight: 100;
