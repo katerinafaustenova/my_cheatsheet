@@ -1,8 +1,7 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
-import "./TipCalculator.css";
-import TipCalculator from "./TipCalculator";
+import TipCalculator from "../components/TipCalculator/TipCalculator";
 
 const code_calculator_state = ` class TipCalculator extends React.Component {
   constructor() {

@@ -6,11 +6,11 @@ class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      open: "React"
+      open: "React",
     };
   }
 
-  handleClick = par => {
+  handleClick = (par) => {
     if (this.state.open !== par) {
       return this.setState(() => ({ open: par }));
     }
@@ -32,6 +32,9 @@ class Navbar extends React.Component {
             </NavLink>
 
             <div className="dropdown">
+              <NavLink to="/React/BurgerPage" exact>
+                Burger
+              </NavLink>
               <NavLink to="/React/LogInPage" exact>
                 Log In Form
               </NavLink>

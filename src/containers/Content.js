@@ -1,12 +1,13 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
-import LogInPage from "../components/LogIn/LogInPage";
-import RouterPage from "../components/Router/RouterPage";
-import StatePropsPage from "../components/StateProps/StatePropsPage";
-import ToDoPage from "../components/ToDo/ToDoPage";
-import TimeComponentsPage from "../components/TimeComponents/TimeComponentsPage";
-import TipCalculatorPage from "../components/TipCalculator/TipCalculatorPage";
+import BurgerPage from "../pages/BurgerPage";
+import LogInPage from "../pages/LogInPage";
+import RouterPage from "../pages/Router/RouterPage";
+import StatePropsPage from "../pages/StateProps/StatePropsPage";
+import ToDoPage from "../pages/ToDoPage";
+import TimeComponentsPage from "../pages/TimeComponentsPage";
+import TipCalculatorPage from "../pages/TipCalculatorPage";
 import "./Content.css";
 
 // A <Switch> looks through its children <Route>s and renders the first one that matches the current URL.
@@ -18,6 +19,9 @@ function Content() {
       <Switch>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/React/BurgerPage">
+          <BurgerPage />
         </Route>
         <Route path="/React/LogInPage">
           <LogInPage />

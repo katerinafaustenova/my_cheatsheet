@@ -1,6 +1,6 @@
 import React from "react";
-import { Countdown } from "./Countdown";
-import Clock from "./Clock";
+import { Countdown } from "./../components/Countdown/Countdown";
+import Clock from "./../components/Clock/Clock";
 
 function TimeComponentsPage() {
   return (

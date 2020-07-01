@@ -1,12 +1,12 @@
 import React from "react";
-import LogIn from "./LogIn";
+import Login from "./../components/Login/Login";
 
 function LogInPage() {
   return (
     <div>
       <h1>Log In Form</h1>
       <p>Description</p>
-      <LogIn />
+      <Login />
     </div>
   );
 }

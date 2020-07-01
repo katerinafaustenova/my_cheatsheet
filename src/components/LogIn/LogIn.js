@@ -1,27 +1,27 @@
 import React from "react";
-import "./LogIn.css";
+import "./Login.css";
 
-class LogIn extends React.Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
       email: "",
       password: "",
-      loggedIn: false
+      loggedIn: false,
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  handleLogin = e => {
+  handleLogin = (e) => {
     e.preventDefault();
     this.setState({
-      loggedIn: true
+      loggedIn: true,
     });
   };
 
@@ -53,4 +53,4 @@ class LogIn extends React.Component {
   }
 }
 
-export default LogIn;
+export default Login;
