@@ -1,0 +1,22 @@
+.clock-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+  min-height: 120px;
+}
+
+.clock-item {
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 30px;
+  margin: 5px;
+  padding-top: 10px;
+  width: 100px;
+  height: 100px;
+}
