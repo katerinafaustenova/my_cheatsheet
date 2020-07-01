@@ -1,10 +1,10 @@
 import React from "react";
 import { Countdown } from "./Countdown";
-import { Clock } from "./Clock";
+import Clock from "./Clock";
 
 function TimeComponentsPage() {
   return (
-    <React.Fragment>
+    <div>
       <div className="countdown">
         <h1>Countdown</h1>
         <Countdown
@@ -19,7 +19,7 @@ function TimeComponentsPage() {
         <h1>Clock</h1>
         <Clock />
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

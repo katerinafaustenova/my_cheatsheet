@@ -1,13 +1,12 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
-import Clock from "../components/Clock/Clock";
-import CountdownPage from "../components/Countdown/CountdownPage";
-import LogIn from "../components/LogIn/LogIn";
-import Router from "../components/Router/Router";
-import StateProps from "../components/StateProps/StateProps";
-import ToDo from "../components/ToDo/ToDo";
-import TipCalculator from "../components/TipCalculator/TipCalculator";
+import LogInPage from "../components/LogIn/LogInPage";
+import RouterPage from "../components/Router/RouterPage";
+import StatePropsPage from "../components/StateProps/StatePropsPage";
+import ToDoPage from "../components/ToDo/ToDoPage";
+import TimeComponentsPage from "../components/TimeComponents/TimeComponentsPage";
+import TipCalculatorPage from "../components/TipCalculator/TipCalculatorPage";
 import "./Content.css";
 
 // A <Switch> looks through its children <Route>s and renders the first one that matches the current URL.
@@ -20,26 +19,23 @@ function Content() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/React/Clock">
-          <Clock />
+        <Route path="/React/LogInPage">
+          <LogInPage />
         </Route>
-        <Route path="/React/Countdown">
-          <CountdownPage />
+        <Route path="/React/RouterPage">
+          <RouterPage />
         </Route>
-        <Route path="/React/LogIn">
-          <LogIn />
+        <Route path="/React/StatePropsPage">
+          <StatePropsPage />
         </Route>
-        <Route path="/React/Router">
-          <Router />
+        <Route path="/React/ToDoPage">
+          <ToDoPage />
         </Route>
-        <Route path="/React/StateProps">
-          <StateProps />
+        <Route path="/React/TimeComponentsPage">
+          <TimeComponentsPage />
         </Route>
-        <Route path="/React/ToDo">
-          <ToDo />
-        </Route>
-        <Route path="/React/TipCalculator">
-          <TipCalculator />
+        <Route path="/React/TipCalculatorPage">
+          <TipCalculatorPage />
         </Route>
       </Switch>
     </div>

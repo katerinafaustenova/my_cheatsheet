@@ -32,25 +32,22 @@ class Navbar extends React.Component {
             </NavLink>
 
             <div className="dropdown">
-              <NavLink to="/React/Clock" exact>
-                Clock
-              </NavLink>
-              <NavLink to="/React/Countdown" exact>
-                Countdown
-              </NavLink>
-              <NavLink to="/React/LogIn" exact>
+              <NavLink to="/React/LogInPage" exact>
                 Log In Form
               </NavLink>
-              <NavLink to="/React/Router" exact>
+              <NavLink to="/React/RouterPage" exact>
                 Router
               </NavLink>
-              <NavLink to="/React/StateProps" exact>
+              <NavLink to="/React/StatePropsPage" exact>
                 State and Props
               </NavLink>
-              <NavLink to="/React/ToDo" exact>
+              <NavLink to="/React/ToDoPage" exact>
                 To Do List
               </NavLink>
-              <NavLink to="/React/TipCalculator" exact>
+              <NavLink to="/React/TimeComponentsPage" exact>
+                Time Components
+              </NavLink>
+              <NavLink to="/React/TipCalculatorPage" exact>
                 Tip Calculator
               </NavLink>
             </div>
