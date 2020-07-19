@@ -35,8 +35,8 @@ class Navbar extends React.Component {
               <NavLink to="/React/BurgerPage" exact>
                 Burger
               </NavLink>
-              <NavLink to="/React/LogInPage" exact>
-                Log In Form
+              <NavLink to="/React/UserFormPage" exact>
+                User Form
               </NavLink>
               <NavLink to="/React/RouterPage" exact>
                 Router

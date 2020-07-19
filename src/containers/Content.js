@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
 import BurgerPage from "../pages/BurgerPage";
-import LogInPage from "../pages/LogInPage";
+import UserFormPage from "../pages/UserFormPage";
 import RouterPage from "../pages/Router/RouterPage";
 import StatePropsPage from "../pages/StateProps/StatePropsPage";
 import ToDoPage from "../pages/ToDoPage";
@@ -15,7 +15,7 @@ import "./Content.css";
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/home" />
+      <Redirect to="/React/UserFormPage" />
       <Switch>
         <Route path="/home">
           <Home />
@@ -23,8 +23,8 @@ function Content() {
         <Route path="/React/BurgerPage">
           <BurgerPage />
         </Route>
-        <Route path="/React/LogInPage">
-          <LogInPage />
+        <Route path="/React/UserFormPage">
+          <UserFormPage />
         </Route>
         <Route path="/React/RouterPage">
           <RouterPage />

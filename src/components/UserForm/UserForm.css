@@ -1,0 +1,90 @@
+.userform_container button {
+  margin-bottom: 20px;
+}
+
+.content_container {
+  padding: 50px;
+  background-color: rgb(1, 80, 80);
+  height: 70vh;
+}
+
+.login_form,
+.lostpassword_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0 20px;
+  background-color: #2f3034;
+  max-width: 300px;
+  margin: 20px auto;
+  border-radius: 3px;
+}
+
+.login_form input,
+.lostpassword_form input {
+  width: 250px;
+  height: 50px;
+  margin: 10px auto;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #b8b8b8;
+  color: white;
+  transition: 500ms;
+  font-size: 16px;
+}
+
+.login_form input:hover,
+.lostpassword_form input:hover {
+  transform: scale(1.05);
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.login_form input:focus,
+.lostpassword_form input:focus {
+  outline: none;
+}
+
+.login_form input::placeholder,
+.lostpassword_form input::placeholder {
+  color: white;
+}
+
+.login_form input[type="submit"],
+.lostpassword_form input[type="submit"] {
+  width: 100px;
+  cursor: pointer;
+  border: 2px solid #b8b8b8;
+  border-radius: 3px;
+  margin-top: 40px;
+  transition: 500ms;
+}
+
+.lostpassword_form input[type="submit"] {
+  width: 200px;
+}
+
+.login_form input[type="submit"]:hover,
+.lostpassword_form input[type="submit"]:hover {
+  transform: scale(1.15);
+}
+
+.lostpassword_form h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 40px;
+}
+
+.login_form div {
+  margin: 60px auto 0;
+  background: transparent;
+  border: none;
+  color: white;
+  transition: 500ms;
+  font-size: 14px;
+}
+
+.login_form div:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
