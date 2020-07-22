@@ -23,106 +23,121 @@ class UserForm extends React.Component {
   };
   // mozna odstranit
   handleSignup = (e) => {
-    alert("You're successfully signed up");
+    this.handleChangeStav("welcome");
   };
 
   handleLogin = (e) => {
     e.preventDefault();
-    // menit stav
     if (
-      this.state.email !== this.state.dummyData.email &&
+      this.state.email !== this.state.dummyData.email ||
       this.state.password !== this.state.dummyData.password
     ) {
       alert("Invalid email address or password");
     } else {
-      alert("You're successfully logged in");
+      this.handleChangeStav("welcome");
     }
   };
 
-  logIn = () => {
+  renderLogIn = () => {
     if (this.state.stav === "login") {
       return (
-        <div className="login_container">
-          <form onSubmit={this.handleLogin} className="login_form">
-            <input
-              type="email"
-              placeholder="E-mail"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
-              minLength="8"
-            />
-            <input type="submit" value="Log In" />
-            <div onClick={() => this.handleChangeStav("lostpassword")}>
-              Forgot password ?
-            </div>
-          </form>
-        </div>
+        <form onSubmit={this.handleLogin} className="login form">
+          <input
+            type="email"
+            placeholder="E-mail"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            required
+            minLength="8"
+          />
+          <input type="submit" value="Log In" />
+          <div
+            className="form_footer"
+            onClick={() => this.handleChangeStav("lostpassword")}
+          >
+            Forgot password ?
+          </div>
+        </form>
       );
     }
     return;
   };
-  // prejmenovat renderSignup
-  signUp = () => {
+
+  renderSignUp = () => {
     if (this.state.stav === "signup") {
       return (
-        <div className="signup_container">
-          <form onSubmit={this.handleSignup}>
-            <input
-              type="text"
-              placeholder="Nickname"
-              name="nickname"
-              value={this.state.nickname}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="email"
-              placeholder="E-mail"
-              name="signupEmail"
-              value={this.state.signupEmail}
-              onChange={this.handleChange}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="signupPassword"
-              value={this.state.signupPassword}
-              onChange={this.handleChange}
-              required
-            />
-            <input type="submit" value="Sign Up" />
-          </form>
+        <form onSubmit={this.handleSignup} className="signup form">
+          <input
+            type="text"
+            placeholder="Nickname"
+            name="nickname"
+            value={this.state.nickname}
+            onChange={this.handleChange}
+            required
+          />
+          <input
+            type="email"
+            placeholder="E-mail"
+            name="signupEmail"
+            value={this.state.signupEmail}
+            onChange={this.handleChange}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="signupPassword"
+            value={this.state.signupPassword}
+            onChange={this.handleChange}
+            required
+          />
+          <input type="submit" value="Sign Up" />
+          <div
+            className="form_footer"
+            onClick={() => this.handleChangeStav("login")}
+          >
+            Already have an account ?
+          </div>
+        </form>
+      );
+    }
+    return;
+  };
+
+  renderMessage = () => {
+    if (this.state.stav === "welcome") {
+      return <div className="message">Welcome user !</div>;
+    } else if (this.state.stav === "newpassword") {
+      return (
+        <div className="message">
+          We've just sent you a link to your new password on entered email
+          address.
         </div>
       );
     }
     return;
   };
 
-  welcome = () => {
-    if (this.state.stav === "welcome") {
-      return <h2>Welcome user !</h2>;
-    }
-    return;
-  };
-
-  lostPassword = () => {
+  renderLostPassword = () => {
     if (this.state.stav === "lostpassword") {
       return (
-        <form className="lostpassword_form">
+        <form className="lostpassword form">
           <h2>Forgot password ?</h2>
           <input type="email" placeholder="Email" />
-          <input type="submit" value="Send new password" />
+          <input
+            type="submit"
+            value="Send new password"
+            onClick={() => this.handleChangeStav("newpassword")}
+          />
         </form>
       );
     }
@@ -143,14 +158,17 @@ class UserForm extends React.Component {
         <button onClick={() => this.handleChangeStav("welcome")}>
           Welcome Page
         </button>
+        <button onClick={() => this.handleChangeStav("newpassword")}>
+          New Password Sent
+        </button>
         <button onClick={() => this.handleChangeStav("lostpassword")}>
-          Forgot Password?
+          Forgot Password ?
         </button>
         <div className="content_container">
-          {this.logIn()}
-          {this.signUp()}
-          {this.welcome()}
-          {this.lostPassword()}
+          {this.renderLogIn()}
+          {this.renderSignUp()}
+          {this.renderMessage()}
+          {this.renderLostPassword()}
         </div>
       </div>
     );

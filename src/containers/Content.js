@@ -10,12 +10,10 @@ import TimeComponentsPage from "../pages/TimeComponentsPage";
 import TipCalculatorPage from "../pages/TipCalculatorPage";
 import "./Content.css";
 
-// A <Switch> looks through its children <Route>s and renders the first one that matches the current URL.
-
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/React/UserFormPage" />
+      <Redirect to="/React/RouterPage" />
       <Switch>
         <Route path="/home">
           <Home />

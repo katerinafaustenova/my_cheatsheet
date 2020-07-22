@@ -1,13 +1,13 @@
 .app {
   font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   background-color: var(--main_color);
   color: var(--text_color);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
   letter-spacing: 1px;
 }
@@ -19,19 +19,41 @@
   max-height: 100%;
   flex: 1 1 auto;
 }
-.app_flexRows {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  overflow: hidden;
-}
 
 h1 {
-  font-weight: 100;
+  font-weight: 300;
+  font-size: 2.2rem;
   text-align: center;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.codeComponent {
+  padding: 0 5px;
+  font-weight: 500;
+  color: #75dae6;
+}
+.codeComponent::before {
+  content: "<";
+  color: #a77afe;
+}
+.codeComponent::after {
+  content: ">";
+  color: #a77afe;
+}
+
+.consoleText {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: solid 1px #5a5a5a;
+  display: inline-block;
+  font-family: monospace;
+  background-color: #00000020;
 }

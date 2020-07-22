@@ -1,3 +1,9 @@
-.syntax_highlight_react_router {
-  width: 750px;
+.router_page {
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+.syntax_highlighter {
+  margin: 30px auto;
+  max-width: 950px;
 }

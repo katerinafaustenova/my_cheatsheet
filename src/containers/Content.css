@@ -1,8 +1,8 @@
 .content_right {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
-  padding: 20px;
+  padding: 30px 50px 100px;
   overflow-y: auto;
   background-color: var(--content_color);
-  border-bottom: crimson 1px solid;
-  box-sizing: border-box;
 }
