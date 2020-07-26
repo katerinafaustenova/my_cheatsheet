@@ -158,11 +158,11 @@ class UserForm extends React.Component {
         <button onClick={() => this.handleChangeStav("welcome")}>
           Welcome Page
         </button>
-        <button onClick={() => this.handleChangeStav("newpassword")}>
-          New Password Sent
-        </button>
         <button onClick={() => this.handleChangeStav("lostpassword")}>
           Forgot Password ?
+        </button>
+        <button onClick={() => this.handleChangeStav("newpassword")}>
+          New Password Sent
         </button>
         <div className="content_container">
           {this.renderLogIn()}

@@ -30,20 +30,52 @@ function TimeComponentsPage() {
         later by calling clearInterval().
       </p>
       <p>
-        I'm calling the clearInterval right before the components in unmounted.
+        I'm calling the clearInterval right before the components is unmounted.
       </p>
       <h1>Countdown</h1>
-      <Countdown
-        timeTillDate="2020-12-31 23:59"
-        timeFormat="YYYY-MM-DD hh:mm"
-      />
+      <Countdown futureDate="2020-12-31 23:59:59" />
+      <p className="italic">
+        This Countdown is set to the 31. 12. 2020 for demonstration.
+      </p>
       <p>For Countdown component I used library called MomentJS.</p>
-      <p></p>
-      <a
-        href="https://www.florin-pop.com/blog/2019/05/countdown-built-with-react/"
-        target="blank"
-      >
-        Link to tutorial
+      <p>
+        MomentJS is a JavaScript date library for parsing, validating,
+        manipulating, and formatting dates.
+      </p>
+      <p>
+        In this component we're using it to set a countdown from now to some
+        specific future date.
+      </p>
+      <p>
+        We're sending this future ending date as a props, using it as a
+        parameter of a moment function and storing the date at some variable.
+      </p>
+      <p>
+        Then we need to find out the current moment / date, which is an
+        integrated function in MomentJS, and also store it.
+      </p>
+      <p>
+        After that we're using duration function to calculate a difference
+        between two stored data.
+      </p>
+      <p>
+        Finally we disintegrate the remaining time between the data to our
+        preffered output format and render it.
+      </p>
+      <p>
+        For countdown component to work we need to update our current time every
+        one second. To do that we call our function when the component is
+        mounted. Then we use setInterval function to call this function again
+        with a delay of one second. After that we store new data into the state
+        which causes the re-render of the component and all this happens again
+        and again.
+      </p>
+      <p>
+        Final important step is not to forget clear the interval right before
+        the components is unmounted.
+      </p>
+      <a href="https://momentjs.com/docs/#/durations/" target="blank">
+        Link to the documentation of MomentJS for this countdown
       </a>
     </div>
   );

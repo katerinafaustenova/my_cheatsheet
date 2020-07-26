@@ -1,7 +1,8 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
-import TipCalculator from "../components/TipCalculator/TipCalculator";
+import TipCalculator from "../../components/TipCalculator/TipCalculator";
+import "./TipCalculatorPage.css";
 
 const code_calculator_state = ` class TipCalculator extends React.Component {
   constructor() {
@@ -71,18 +72,30 @@ const code_calculator_render = ` render() {
 
 function TipCalculatorPage() {
   return (
-    <div>
+    <div className="tipCalculator_page">
       <h1>Tip Calculator</h1>
-      <p>Description</p>
       <TipCalculator />
-      <div className="syntax_highlight_calculator">
-        <SyntaxHighlighter language="javascript" style={xonokai}>
+      <p>Description</p>
+      <div>
+        <SyntaxHighlighter
+          language="javascript"
+          style={xonokai}
+          className="syntax_highlighter"
+        >
           {code_calculator_state}
         </SyntaxHighlighter>
-        <SyntaxHighlighter language="javascript" style={xonokai}>
+        <SyntaxHighlighter
+          language="javascript"
+          style={xonokai}
+          className="syntax_highlighter"
+        >
           {code_calculator_methods}
         </SyntaxHighlighter>
-        <SyntaxHighlighter language="javascript" style={xonokai}>
+        <SyntaxHighlighter
+          language="javascript"
+          style={xonokai}
+          className="syntax_highlighter"
+        >
           {code_calculator_render}
         </SyntaxHighlighter>
       </div>

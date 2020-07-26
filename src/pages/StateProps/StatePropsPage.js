@@ -14,6 +14,7 @@ const code_home_state = ` class Home extends React.Component {
     };
   }`;
 
+// eslint-disable-next-line
 const path = "`/${item.category}/${item.sub}`";
 
 const code_home_render = ` render() {

@@ -9,12 +9,21 @@
 }
 
 .time_components a {
-  margin: 20px 0;
+  margin: 20px auto;
+  padding: 10px 20px;
   transition: 500ms;
   text-align: center;
+  border: 1px solid #5a5a5a;
+  border-radius: 3px;
 }
 
 .time_components a:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.italic {
+  font-style: italic;
+  font-size: 14px;
+  text-decoration: underline;
 }

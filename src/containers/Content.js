@@ -6,13 +6,13 @@ import RouterPage from "../pages/Router/RouterPage";
 import StatePropsPage from "../pages/StateProps/StatePropsPage";
 import ToDoPage from "../pages/ToDoPage";
 import TimeComponentsPage from "../pages/TimeComponents/TimeComponentsPage";
-import TipCalculatorPage from "../pages/TipCalculatorPage";
+import TipCalculatorPage from "../pages/TipCalculator/TipCalculatorPage";
 import "./Content.css";
 
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/React/TimeComponentsPage" />
+      <Redirect to="/React/TipCalculatorPage" />
       <Switch>
         <Route path="/home">
           <Home />
