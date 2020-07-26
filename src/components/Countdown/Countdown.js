@@ -41,37 +41,35 @@ export class Countdown extends React.Component {
     }
 
     if (seconds === null || minutes === null) {
-      return <div className="countdown-wrapper">Loading...</div>;
+      return <div className="countdown-wrapper loading">Loading...</div>;
     }
 
     return (
-      <div>
-        <div className="countdown-wrapper">
-          {days && (
-            <div className="countdown-item">
-              {days}
-              <span>dní</span>
-            </div>
-          )}
-          {hours && (
-            <div className="countdown-item">
-              {hours}
-              <span>hodin</span>
-            </div>
-          )}
-          {minutes && (
-            <div className="countdown-item">
-              {minutes}
-              <span>minut</span>
-            </div>
-          )}
-          {seconds && (
-            <div className="countdown-item seconds">
-              {seconds}
-              <span>vteřin</span>
-            </div>
-          )}
-        </div>
+      <div className="countdown-wrapper consoleText">
+        {days && (
+          <div className="countdown-item">
+            {days}
+            <span>dní</span>
+          </div>
+        )}
+        {hours && (
+          <div className="countdown-item">
+            {hours}
+            <span>hodin</span>
+          </div>
+        )}
+        {minutes && (
+          <div className="countdown-item">
+            {minutes}
+            <span>minut</span>
+          </div>
+        )}
+        {seconds && (
+          <div className="countdown-item seconds">
+            {seconds}
+            <span>vteřin</span>
+          </div>
+        )}
       </div>
     );
   }

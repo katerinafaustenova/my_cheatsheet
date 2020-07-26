@@ -5,6 +5,12 @@
   flex-wrap: wrap;
   color: #fff;
   min-height: 120px;
+  margin: 20px auto 34px;
+}
+
+.loading {
+  font-size: 22px;
+  height: 142px;
 }
 
 .countdown-item {
@@ -32,9 +38,4 @@
   .seconds {
     display: none;
   }
-}
-
-.countdown a:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }

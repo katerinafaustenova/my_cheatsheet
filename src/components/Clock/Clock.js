@@ -7,7 +7,7 @@ class Clock extends React.Component {
     this.state = {
       seconds: null,
       minutes: null,
-      hours: null
+      hours: null,
     };
   }
 
@@ -28,7 +28,7 @@ class Clock extends React.Component {
     this.setState({
       seconds: seconds,
       minutes: minutes,
-      hours: hours
+      hours: hours,
     });
   };
 
@@ -52,7 +52,7 @@ class Clock extends React.Component {
   renderTime() {
     const { hours } = this.state;
     return (
-      <div className="clock-wrapper">
+      <div className="clock-wrapper consoleText">
         <div className="clock-item">{`${hours}h`}</div>
         <div className="clock-item">{this.getMinutes()}</div>
         <div className="clock-item">{this.getSeconds()}</div>
@@ -61,7 +61,7 @@ class Clock extends React.Component {
   }
 
   render() {
-    return <div>{this.renderTime()}</div>;
+    return <React.Fragment>{this.renderTime()}</React.Fragment>;
   }
 }
 

@@ -1,0 +1,20 @@
+.time_components {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time_components h1 {
+  margin: 30px 0;
+}
+
+.time_components a {
+  margin: 20px 0;
+  transition: 500ms;
+  text-align: center;
+}
+
+.time_components a:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

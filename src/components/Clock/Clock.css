@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   color: #fff;
   min-height: 120px;
+  margin: 20px auto 34px;
 }
 
 .clock-item {

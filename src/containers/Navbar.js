@@ -32,9 +32,6 @@ class Navbar extends React.Component {
             </NavLink>
 
             <div className="dropdown">
-              <NavLink to="/React/BurgerPage" exact>
-                Burger
-              </NavLink>
               <NavLink to="/React/UserFormPage" exact>
                 User Form
               </NavLink>

@@ -65,7 +65,7 @@ function RouterPage() {
     <div className="router_page">
       <h1>Router</h1>
       <h2>Installation</h2>
-      <p className="consoleText">yarn install react-router-dom</p>
+      <p className="consoleText monospace">yarn install react-router-dom</p>
       <h2>Explanation and usage</h2>
       <p>
         3 “pages” handled by the router: a home page, a react clock page and a

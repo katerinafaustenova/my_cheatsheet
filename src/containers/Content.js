@@ -1,25 +1,21 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
-import BurgerPage from "../pages/BurgerPage";
 import UserFormPage from "../pages/UserFormPage";
 import RouterPage from "../pages/Router/RouterPage";
 import StatePropsPage from "../pages/StateProps/StatePropsPage";
 import ToDoPage from "../pages/ToDoPage";
-import TimeComponentsPage from "../pages/TimeComponentsPage";
+import TimeComponentsPage from "../pages/TimeComponents/TimeComponentsPage";
 import TipCalculatorPage from "../pages/TipCalculatorPage";
 import "./Content.css";
 
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/React/RouterPage" />
+      <Redirect to="/React/TimeComponentsPage" />
       <Switch>
         <Route path="/home">
           <Home />
-        </Route>
-        <Route path="/React/BurgerPage">
-          <BurgerPage />
         </Route>
         <Route path="/React/UserFormPage">
           <UserFormPage />
