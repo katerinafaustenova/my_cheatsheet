@@ -75,7 +75,12 @@ function TipCalculatorPage() {
     <div className="tipCalculator_page">
       <h1>Tip Calculator</h1>
       <TipCalculator />
-      <p>Description</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
+        delectus laborum blanditiis voluptatum voluptate atque dignissimos
+        provident qui reprehenderit! Nisi, blanditiis at hic vel quibusdam dicta
+        amet! Recusandae, nemo esse.
+      </p>
       <div>
         <SyntaxHighlighter
           language="javascript"

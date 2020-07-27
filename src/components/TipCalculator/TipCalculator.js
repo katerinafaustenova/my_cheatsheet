@@ -5,16 +5,16 @@ class TipCalculator extends React.Component {
   constructor() {
     super();
     this.state = {
-      bill: "",
-      selectedOption: "0.20",
-      tip: "",
-      total: "",
+      bill: null,
+      selectedOption: 0.2,
+      tip: null,
+      total: null,
     };
   }
 
   handleChangeBill = (e) => {
     this.setState({
-      [e.target.id]: e.target.value,
+      [e.target.id]: Number(e.target.value),
     });
   };
 
@@ -24,10 +24,11 @@ class TipCalculator extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const a = this.state.bill;
-    const b = this.state.selectedOption;
-    const result = a * b;
-    const total = result + this.state.bill;
+    const { bill, selectedOption } = this.state;
+
+    const result = bill * selectedOption;
+    const total = result + bill;
+
     this.setState({
       tip: result,
       total: total,
@@ -35,6 +36,7 @@ class TipCalculator extends React.Component {
   };
 
   render() {
+    console.log(this.state.bill, "render");
     return (
       <React.Fragment>
         <form onSubmit={this.handleSubmit} className="calculator">
@@ -42,9 +44,10 @@ class TipCalculator extends React.Component {
             How much was your bill ?
             <input
               type="number"
-              value={this.state.bill}
+              // value={this.state.bill}
               id="bill"
               onChange={this.handleChangeBill}
+              min="0"
             />
           </label>
           <label>
