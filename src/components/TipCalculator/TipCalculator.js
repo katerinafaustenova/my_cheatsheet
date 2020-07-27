@@ -1,4 +1,5 @@
 import React from "react";
+import "./TipCalculator.css";
 
 class TipCalculator extends React.Component {
   constructor() {
@@ -35,8 +36,8 @@ class TipCalculator extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <React.Fragment>
+        <form onSubmit={this.handleSubmit} className="calculator">
           <label>
             How much was your bill ?
             <input
@@ -62,7 +63,7 @@ class TipCalculator extends React.Component {
         </form>
         <div>Tip: {this.state.tip}</div>
         <div>Total amount: {this.state.total}</div>
-      </div>
+      </React.Fragment>
     );
   }
 }
