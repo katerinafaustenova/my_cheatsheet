@@ -1,5 +1,6 @@
 import React from "react";
-import "./TipCalculator.css";
+import styles from "./TipCalculator.module.css";
+import classnames from "classnames";
 
 class TipCalculator extends React.Component {
   constructor() {
@@ -28,8 +29,8 @@ class TipCalculator extends React.Component {
     e.preventDefault();
     const { bill, selectedOption } = this.state;
 
-    const result = (bill * selectedOption) / 100;
-    const total = result + bill;
+    const result = Math.round((bill * selectedOption) / 100);
+    const total = Math.round(result + bill);
 
     this.setState({
       tip: result,
@@ -39,22 +40,24 @@ class TipCalculator extends React.Component {
 
   render() {
     return (
-      <form className="calculator">
-        <div className="row">
-          <div className="label">Bill</div>
+      <form className={styles.calculator}>
+        <div className={styles.row}>
+          <div className={styles.billCurrency}>Kč</div>
+          <div className={styles.label}>Bill</div>
           <input
             type="number"
             // value={this.state.bill}
             id="bill"
             onChange={this.handleChange}
             min="0"
+            className={styles.billInput}
           />
         </div>
-        <div className="row">
-          <div className="label">Tip</div>
+        <div className={styles.row}>
+          <div className={styles.label}>Tip</div>
           <div>{this.state.selectedOption} %</div>
         </div>
-        <div className="row">
+        <div className={classnames(styles.row, styles.noPadding)}>
           <input
             type="range"
             min="0"
@@ -63,17 +66,17 @@ class TipCalculator extends React.Component {
             value={this.state.selectedOption}
             onChange={this.handleChange}
             step="5"
-            className="slider"
+            className={styles.rangeInput}
           ></input>
         </div>
-        <div className="line"></div>
-        <div className="row">
+        <div className={styles.line}></div>
+        <div className={styles.row}>
           <div>Tip amount:</div>
-          <div>{this.state.tip}</div>
+          <div>{this.state.tip} Kč</div>
         </div>
-        <div className="row">
+        <div className={styles.row}>
           <div>Total amount:</div>
-          <div className="total">{this.state.total}</div>
+          <div className={styles.total}>{this.state.total} Kč</div>
         </div>
       </form>
     );

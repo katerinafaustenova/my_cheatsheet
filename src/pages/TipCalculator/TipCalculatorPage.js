@@ -4,69 +4,77 @@ import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 import TipCalculator from "../../components/TipCalculator/TipCalculator";
 import "./TipCalculatorPage.css";
 
-const code_calculator_state = ` class TipCalculator extends React.Component {
+const code_calculator_state = `class TipCalculator extends React.Component {
   constructor() {
     super();
     this.state = {
-      bill: "",
-      selectedOption: "0.20",
-      tip: "",
+      bill: null,
+      selectedOption: 10,
+      tip: null,
+      total: null,
     };
   }`;
 
-const code_calculator_methods = ` handleChangeBill = (e) => {
+const code_calculator_methods = ` handleChange = (e) => {
+    e.preventDefault();
     this.setState({
-      [e.target.id]: e.target.value,
+      [e.target.id]: Number(e.target.value),
     });
-    console.log(this.state.bill);
+    this.handleSubmit(e);
   };
-  
-  handleChangeOption = (e) => {
-    this.setState({ selectedOption: e.target.value });
-    console.log(this.state.selectedOption);
-  };
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
-    const a = this.state.bill;
-    const b = this.state.selectedOption;
-    const result = a * b;
+    const { bill, selectedOption } = this.state;
+
+    const result = Math.round((bill * selectedOption) / 100);
+    const total = Math.round(result + bill);
+
     this.setState({
       tip: result,
+      total: total,
     });
   };`;
 
-const code_calculator_render = ` render() {
+const code_calculator_render = `render() {
   return (
-    <div>
-      <h1>Tip Calculator</h1>
-      <p>Description</p>
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          How much was your bill?
-          <input
-            type="number"
-            value={this.state.bill}
-            id="bill"
-            onChange={this.handleChangeBill}
-          />
-        </label>
-        <label>
-          How was your service?
-          <select
-            value={this.state.selectedOption}
-            onChange={this.handleChangeOption}
-          >
-            <option value="0.20">20 % Perfect</option>
-            <option value="0.15">15 % Good</option>
-            <option value="0.10">10 % Satisfying</option>
-            <option value="0.05">5 % Not that good</option>
-          </select>
-        </label>
-        <input type="submit" value="Calculate" />
-      </form>
-      {this.state.tip}
-    </div>
+    <form className={styles.calculator}>
+      <div className={styles.row}>
+        <div className={styles.label}>Bill</div>
+        <input
+          type="number"
+          id="bill"
+          onChange={this.handleChange}
+          min="0"
+          className={styles.billInput}
+        />
+      </div>
+      <div className={styles.row}>
+        <div className={styles.label}>Tip</div>
+        <div>{this.state.selectedOption} %</div>
+      </div>
+      <div className={classnames(styles.row, styles.noPadding)}>
+        <input
+          type="range"
+          min="0"
+          max="30"
+          id="selectedOption"
+          value={this.state.selectedOption}
+          onChange={this.handleChange}
+          step="5"
+          className={styles.rangeInput}
+        ></input>
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.row}>
+        <div>Tip amount:</div>
+        <div>{this.state.tip}</div>
+      </div>
+      <div className={styles.row}>
+        <div>Total amount:</div>
+        <div className={styles.total}>{this.state.total}</div>
+      </div>
+    </form>
   );
 }`;
 

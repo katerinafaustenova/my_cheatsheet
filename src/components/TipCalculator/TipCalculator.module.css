@@ -1,0 +1,98 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 0px;
+  color: white;
+  background: #001e71;
+  background: linear-gradient(
+    to left top,
+    #001e71,
+    #343393,
+    #5a4ab6,
+    #8061da,
+    #a77afe
+  );
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+  align-items: center;
+  position: relative;
+}
+
+.noPadding {
+  height: 30px;
+  padding-bottom: 25px;
+}
+
+.billInput {
+  width: 140px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 3px 40px 3px 5px;
+  color: white;
+  transition: transform 500ms;
+  font-size: 24px;
+  font-weight: 500;
+  caret-color: white;
+  text-align: right;
+  -moz-appearance: textfield;
+}
+
+.billInput:hover {
+  transform: scale(1.05);
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.billInput:focus {
+  outline: 0;
+}
+
+.billInput::-webkit-outer-spin-button,
+.billInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.billCurrency {
+  position: absolute;
+  right: 30px;
+}
+
+.rangeInput {
+  width: 100%;
+  background: #343393;
+  background: linear-gradient(
+    to left top,
+    #001e71,
+    #343393,
+    #5a4ab6,
+    #8061da,
+    #a77afe
+  );
+  outline: none;
+  transition: transform 500ms;
+  cursor: pointer;
+}
+
+.rangeInput:hover {
+  transform: scale(1.05);
+}
+
+.line {
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.total {
+  font-size: 24px;
+}
