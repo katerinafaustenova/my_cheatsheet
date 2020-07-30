@@ -1,13 +1,14 @@
 import React from "react";
+import "./ToDoPage.css";
 import ToDo from "./../components/ToDo/ToDo";
 
 function ToDoPage() {
   return (
-    <div>
+    <div className="toDo_page">
       <h1>To Do List</h1>
-      <h2>Tasks:</h2>
+      {/* <h2>Tasks:</h2> */}
       <ToDo />
-      <p>Description</p>
+      {/* <p>Description</p> */}
     </div>
   );
 }
