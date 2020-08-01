@@ -13,6 +13,7 @@ class TipCalculator extends React.Component {
     };
   }
 
+  // dodelat !
   // componentDidUpdate() {
   //   return;
   // }
