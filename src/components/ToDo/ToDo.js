@@ -13,8 +13,8 @@ class ToDo extends React.Component {
         text: "",
         key: "",
       },
-      edit: "",
-      editedItem: "",
+      editedItemKey: "",
+      editedItemValue: "",
     };
   }
 
@@ -27,7 +27,7 @@ class ToDo extends React.Component {
     });
   };
 
-  addItem = (e) => {
+  addNewItem = (e) => {
     e.preventDefault();
     const newItem = this.state.currentItem;
     if (newItem.text !== "") {
@@ -51,54 +51,54 @@ class ToDo extends React.Component {
 
   editItem = (key) => {
     this.setState({
-      edit: key,
+      editedItemKey: key,
     });
   };
 
-  handleEdit = (e) => {
+  handleEditChange = (e) => {
     this.setState({
-      editedItem: e.target.value,
+      editedItemValue: e.target.value,
     });
   };
 
   confirmEdit = (key) => {
-// vyfiltrovat soucasne pole items podle key, v tom nahradit text novou hodnotou z editedItem
+    const items = this.state.items;
+    const { editedItemKey, editedItemValue } = this.state;
+
+    items.forEach((item) => {
+      if (item.key === editedItemKey) {
+        item.text = editedItemValue;
+      }
+    });
+
+    this.setState({
+      items: items,
+      editedItemKey: "",
+      editedItemValue: "",
+    });
   };
 
-  // setUpdate = (text, key) => {
-  //   const items = this.state.items;
-  //   // eslint-disable-next-line
-  //   items.map((item) => {
-  //     if (item.key === key) {
-  //       item.text = text;
-  //     }
-  //   });
-  //   this.setState({
-  //     items: items,
-  //   });
-  // };
-
   render() {
-    console.log(this.state.editedItem);
+    const { currentItem, items, editedItemKey } = this.state;
     return (
       <React.Fragment>
-        <form className="toDoForm" onSubmit={this.addItem}>
+        <form className="toDoForm" onSubmit={this.addNewItem}>
           <TextField
             id="outlined-basic"
             label="New item"
             variant="outlined"
-            value={this.state.currentItem.text}
+            value={currentItem.text}
             onChange={this.handleChange}
             className="addField"
           />
-          <AddCircleIcon onClick={this.addItem} className="addIcon" />
+          <AddCircleIcon onClick={this.addNewItem} className="addIcon" />
         </form>
         <ToDoItems
-          editable={this.state.edit}
-          items={this.state.items}
+          items={items}
           deleteItem={this.deleteItem}
+          editable={editedItemKey}
           editItem={this.editItem}
-          handleEdit={this.handleEdit}
+          handleEditChange={this.handleEditChange}
           confirmEdit={this.confirmEdit}
         />
       </React.Fragment>
