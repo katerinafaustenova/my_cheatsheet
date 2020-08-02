@@ -1,14 +1,17 @@
 import React from "react";
 import "./ToDo.css";
 import ToDoItems from "./ToDoItems";
-import TextField from "@material-ui/core/TextField";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
+import { TextField, Button, Box, Container } from "@material-ui/core";
 
 class ToDo extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: [],
+      items: [
+        { text: "test1", key: "test1" },
+        { text: "test2", key: "test2" },
+        { text: "test3", key: "test3" },
+      ],
       currentItem: {
         text: "",
         key: "",
@@ -81,17 +84,28 @@ class ToDo extends React.Component {
   render() {
     const { currentItem, items, editedItemKey } = this.state;
     return (
-      <React.Fragment>
+      <Container maxWidth="sm" style={{ height: "100%", overflow: "scroll" }}>
+        <h1>To Do List</h1>
         <form className="toDoForm" onSubmit={this.addNewItem}>
-          <TextField
-            id="outlined-basic"
-            label="New item"
-            variant="outlined"
-            value={currentItem.text}
-            onChange={this.handleChange}
-            className="addField"
-          />
-          <AddCircleIcon onClick={this.addNewItem} className="addIcon" />
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <TextField
+              fullWidth
+              id="outlined-basic"
+              variant="outlined"
+              label="New item"
+              value={currentItem.text}
+              onChange={this.handleChange}
+            />
+            <Box m={2}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.addNewItem}
+              >
+                Add Item
+              </Button>
+            </Box>
+          </Box>
         </form>
         <ToDoItems
           items={items}
@@ -101,7 +115,7 @@ class ToDo extends React.Component {
           handleEditChange={this.handleEditChange}
           confirmEdit={this.confirmEdit}
         />
-      </React.Fragment>
+      </Container>
     );
   }
 }

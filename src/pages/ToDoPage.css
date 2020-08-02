@@ -1,5 +1,8 @@
 .toDo_page {
+  width: 100%;
+  height: 100%;
   background-color: white;
   color: black;
-  min-height: 500px;
+  overflow: hidden;
+  margin-bottom: -100px;
 }
