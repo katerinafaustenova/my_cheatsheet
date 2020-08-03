@@ -89,6 +89,7 @@ class ToDo extends React.Component {
         <form className="toDoForm" onSubmit={this.addNewItem}>
           <Box display="flex" flexDirection="column" alignItems="center">
             <TextField
+              autoComplete="off"
               fullWidth
               id="outlined-basic"
               variant="outlined"

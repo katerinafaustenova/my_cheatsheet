@@ -3,6 +3,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./Router.css";
 
+const code_import_app = `import { BrowserRouter } from "react-router-dom";`;
+
 const code_app = ` return (
   <div className="app">
     <BrowserRouter>
@@ -14,6 +16,8 @@ const code_app = ` return (
     </BrowserRouter>
   </div>
 );`;
+
+const code_import_content = `import { Switch, Route, Redirect } from "react-router-dom";`;
 
 const code_content = ` return (
   <div className="content_right">
@@ -31,6 +35,8 @@ const code_content = ` return (
     </Switch>
   </div>
 );`;
+
+const code_import_navbar = `import { NavLink } from "react-router-dom";`;
 
 const code_navbar = ` return (
   <nav className="nav_left">
@@ -65,12 +71,19 @@ function RouterPage() {
     <div className="router_page">
       <h1>Router</h1>
       <h2>Installation</h2>
-      <p className="consoleText monospace">yarn install react-router-dom</p>
+      <p className="consoleText monospace">yarn add react-router-dom</p>
       <h2>Explanation and usage</h2>
       <p>
         3 “pages” handled by the router: a home page, a react clock page and a
         react countdown page.
       </p>
+      <SyntaxHighlighter
+        language="javascript"
+        style={xonokai}
+        className="syntax_highlighter"
+      >
+        {code_import_app}
+      </SyntaxHighlighter>
       <p>
         The <span className="codeComponent">BrowserRouter</span> has to wrap all
         components, which are using router (it means every component, which uses
@@ -89,6 +102,13 @@ function RouterPage() {
         <span className="codeComponent">Routes</span> and renders whatever is
         inside a matching route, for example a whole component.
       </p>
+      <SyntaxHighlighter
+        language="javascript"
+        style={xonokai}
+        className="syntax_highlighter"
+      >
+        {code_import_content}
+      </SyntaxHighlighter>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
@@ -114,6 +134,13 @@ function RouterPage() {
         <span className="codeComponent">NavLink</span> is highlighted because an
         active class has been added to this element.
       </p>
+      <SyntaxHighlighter
+        language="javascript"
+        style={xonokai}
+        className="syntax_highlighter"
+      >
+        {code_import_navbar}
+      </SyntaxHighlighter>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
