@@ -8,7 +8,7 @@ import DoneIcon from "@material-ui/icons/Done";
 function ToDoItems(props) {
   const { items, editable } = props;
   return (
-    <React.Fragment>
+    <div className="todo_items">
       {items.map((item) => {
         return (
           <Paper style={{ margin: 10 }}>
@@ -54,7 +54,7 @@ function ToDoItems(props) {
           </Paper>
         );
       })}
-    </React.Fragment>
+    </div>
   );
 }
 

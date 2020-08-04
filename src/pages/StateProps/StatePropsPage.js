@@ -47,8 +47,9 @@ function StatePropsPage() {
           change.
         </p>
         <p>
-          State is needed when we want our app to do anything (interact like add
-          or delete stuff, log in or log out from a user acount).
+          State is needed when we want our app to do something and to keep track
+          of it (interact like add or delete stuff, log in or log out from a
+          user acount and know when the user is logged in or not).
         </p>
         <p>
           Each component can maintain its own state in an object called

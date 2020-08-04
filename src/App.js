@@ -11,8 +11,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <div className="app_content">
-          <Navbar />
-          <Content />
+          <div className="app_workspace">
+            <Navbar />
+            <Content />
+          </div>
         </div>
       </BrowserRouter>
     </div>

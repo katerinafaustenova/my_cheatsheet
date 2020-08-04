@@ -1,5 +1,4 @@
 import React from "react";
-import "./ToDo.css";
 import ToDoItems from "./ToDoItems";
 import { TextField, Button, Box, Container } from "@material-ui/core";
 
@@ -84,10 +83,13 @@ class ToDo extends React.Component {
   render() {
     const { currentItem, items, editedItemKey } = this.state;
     return (
-      <Container maxWidth="sm" style={{ height: "100%", overflow: "scroll" }}>
-        <h1>To Do List</h1>
-        <form className="toDoForm" onSubmit={this.addNewItem}>
+      <Container
+        maxWidth="sm"
+        style={{ minHeight: "680px", background: "white", borderRadius: "4px" }}
+      >
+        <form onSubmit={this.addNewItem}>
           <Box display="flex" flexDirection="column" alignItems="center">
+            <h1>To Do List</h1>
             <TextField
               autoComplete="off"
               fullWidth
@@ -108,14 +110,16 @@ class ToDo extends React.Component {
             </Box>
           </Box>
         </form>
-        <ToDoItems
-          items={items}
-          deleteItem={this.deleteItem}
-          editable={editedItemKey}
-          editItem={this.editItem}
-          handleEditChange={this.handleEditChange}
-          confirmEdit={this.confirmEdit}
-        />
+        <div style={{ position: "relative" }}>
+          <ToDoItems
+            items={items}
+            deleteItem={this.deleteItem}
+            editable={editedItemKey}
+            editItem={this.editItem}
+            handleEditChange={this.handleEditChange}
+            confirmEdit={this.confirmEdit}
+          />
+        </div>
       </Container>
     );
   }

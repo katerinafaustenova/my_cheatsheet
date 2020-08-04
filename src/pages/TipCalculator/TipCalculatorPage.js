@@ -87,13 +87,11 @@ function TipCalculatorPage() {
       <h1>Tip Calculator</h1>
       <TipCalculator />
       <p>
-        We initialize everything in state empty except the amount of tip, which
-        is pre-defined to 10 %.
-      </p>
-      <p>
-        In the state, we keep track of the amount of bill (from user input),
-        selected option of tip, the final amount of tip and final amount of
-        whole bill including the tip based on the selected option.
+        Every part of the application we want to keep track of needs to be in
+        the state of the class component, so the amount of bill, the amount of
+        the tip and the total amount of the bill with tip included is
+        initialized in state as a null value (no specific value) and the
+        selected percentage of the tip is initialized at 10 %.
       </p>
       <div>
         <SyntaxHighlighter
@@ -103,21 +101,16 @@ function TipCalculatorPage() {
         >
           {code_calculator_state}
         </SyntaxHighlighter>
+        <p>The handleChange method is called on any changes in the inputs.</p>
         <p>
-          We don't want to see the results only after clicking on some button
-          every time we change the input bill or the selected option of the tip.
+          The handleSubmit method itself calculates the results based on what
+          amount of bill and which option of tip is currently in the state and
+          then set the results to the state so we can easily render them.
         </p>
         <p>
-          That's why we used the handleSubmit method as a second parameter to
-          the setState method, which sets to the state a current values of the
-          user inputs. This way we will have exact results on every change user
-          will do.
-        </p>
-        <p>
-          The handleChange method alone is called on any changes. The
-          handleSubmit method itself calculates the results based on what amount
-          of bill and which option of tip is currently in the state and then set
-          the results to the state so we can easily render them.
+          In order to see the results immediately after any change in the inputs
+          the handleSubmit method is used as a second parameter of the setState
+          method in the handleChange.
         </p>
         <SyntaxHighlighter
           language="javascript"
@@ -127,11 +120,11 @@ function TipCalculatorPage() {
           {code_calculator_methods}
         </SyntaxHighlighter>
         <p>
-          In render method we have two inputs - number for the amount of bill
-          and range for the selected amount of tip and both these inputs have
-          the same onChange function.
+          There are two inputs in the render method - number for the amount of
+          bill and range for the selected amount of tip and both these inputs
+          have the same onChange function.
         </p>
-        <p>For styling this app I used CSS modules.</p>
+        <p>I've used CSS modules to style this app.</p>
         <p></p>
         <SyntaxHighlighter
           language="javascript"
