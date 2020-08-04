@@ -4,7 +4,7 @@ import Home from "./Home";
 import UserFormPage from "../pages/UserFormPage";
 import RouterPage from "../pages/Router/RouterPage";
 import StatePropsPage from "../pages/StateProps/StatePropsPage";
-import ToDoPage from "../pages/ToDoPage";
+import ToDoPage from "../pages/ToDo/ToDoPage";
 import TimeComponentsPage from "../pages/TimeComponents/TimeComponentsPage";
 import TipCalculatorPage from "../pages/TipCalculator/TipCalculatorPage";
 import "./Content.css";
@@ -12,7 +12,7 @@ import "./Content.css";
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/React/ToDoPage" />
+      <Redirect to="/React/TipCalculatorPage" />
       <Switch>
         <Route path="/home">
           <Home />
