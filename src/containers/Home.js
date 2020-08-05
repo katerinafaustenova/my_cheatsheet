@@ -9,14 +9,17 @@ class Home extends React.Component {
     this.state = {
       best: [
         { category: "React", sub: "RouterPage", title: "Router" },
-        { category: "React", sub: "StatePropsPage", title: "State and Props" }
-      ]
+        { category: "React", sub: "StatePropsPage", title: "State and Props" },
+      ],
     };
   }
   render() {
     return (
       <div className="home">
-        {this.state.best.map(item => (
+        <div className="progress">
+          <h2>In progress....</h2>
+        </div>
+        {this.state.best.map((item) => (
           <NavLink
             to={`/${item.category}/${item.sub}`}
             key={`/${item.category}/${item.sub}`}

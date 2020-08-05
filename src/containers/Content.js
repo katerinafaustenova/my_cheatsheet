@@ -12,7 +12,7 @@ import "./Content.css";
 function Content() {
   return (
     <div className="content_right">
-      <Redirect to="/React/ToDoPage" />
+      <Redirect to="/home" />
       <Switch>
         <Route path="/home">
           <Home />
