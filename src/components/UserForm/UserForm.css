@@ -1,40 +1,40 @@
-.userform_container button {
+.user_form_wrapper button {
   margin-bottom: 20px;
 }
 
-.content_container {
-  padding: 50px;
-  background-color: rgb(1, 80, 80);
+.user_form {
   height: 70vh;
+  background-color: rgb(1, 80, 80);
+  padding: 50px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 0 20px;
-  background-color: #2f3034;
   max-width: 300px;
-  margin: 20px auto;
+  background-color: #2f3034;
   border-radius: 3px;
+  margin: 20px auto;
+  padding: 40px 0 20px;
 }
 
 .form input {
   width: 250px;
   height: 50px;
-  margin: 10px auto;
   background: transparent;
+  color: white;
+  caret-color: white;
   border: none;
   border-bottom: 2px solid #b8b8b8;
-  color: white;
-  transition: transform 500ms;
   font-size: 16px;
-  caret-color: white;
+  margin: 10px auto;
+  transition: transform 500ms;
 }
 
 .form input:hover {
-  transform: scale(1.05);
   border-bottom: 2px solid #e6e6e6;
+  transform: scale(1.05);
 }
 
 .form input:focus {
@@ -63,40 +63,39 @@
 }
 
 .lostpassword h2 {
-  text-align: center;
   font-size: 16px;
   font-weight: 500;
+  text-align: center;
   margin: 0 0 40px;
 }
 
 .form_footer {
-  margin: 60px auto 0;
   background: transparent;
   border: none;
   color: white;
-  transition: 500ms;
   font-size: 14px;
+  margin: 60px auto 0;
+  transition: 500ms;
 }
 
 .form_footer:hover {
-  transform: scale(1.05);
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .welcome_page {
   width: auto;
   height: auto;
-  background-color: red;
 }
 .message {
-  background-color: #2f3034;
   max-width: 500px;
-  margin: 20px auto;
-  padding: 18px;
-  border-radius: 3px;
-  text-align: center;
+  background-color: #2f3034;
   font-size: 20px;
   font-weight: 400;
+  text-align: center;
+  border-radius: 3px;
+  margin: 20px auto;
+  padding: 18px;
 }
 
 input:-webkit-autofill {

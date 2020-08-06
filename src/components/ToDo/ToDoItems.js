@@ -1,9 +1,9 @@
 import React from "react";
-import "./ToDoItems.css";
 import { Input, Paper, ListItem, List, IconButton } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import DoneIcon from "@material-ui/icons/Done";
+import "./ToDoItems.css";
 
 function ToDoItems(props) {
   const { items, editable } = props;
@@ -23,13 +23,12 @@ function ToDoItems(props) {
                     props.handleEditChange(e);
                   }}
                   className={
-                    item.key === editable ? "itemInput editable" : "itemInput"
+                    item.key === editable ? "item_input editable" : "item_input"
                   }
                 />
                 {item.key === editable ? (
                   <IconButton aria-label="done" style={{ color: "green" }}>
                     <DoneIcon
-                      className="doneIcon"
                       onClick={() => {
                         props.confirmEdit(item.key);
                       }}
@@ -37,17 +36,11 @@ function ToDoItems(props) {
                   </IconButton>
                 ) : (
                   <IconButton aria-label="edit" color="primary">
-                    <EditIcon
-                      className="editIcon"
-                      onClick={() => props.editItem(item.key)}
-                    />
+                    <EditIcon onClick={() => props.editItem(item.key)} />
                   </IconButton>
                 )}
                 <IconButton aria-label="delete" color="secondary">
-                  <DeleteIcon
-                    className="deleteIcon"
-                    onClick={() => props.deleteItem(item.key)}
-                  />
+                  <DeleteIcon onClick={() => props.deleteItem(item.key)} />
                 </IconButton>
               </ListItem>
             </List>

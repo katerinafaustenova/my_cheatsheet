@@ -3,9 +3,9 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./Router.css";
 
-const code_import_app = `import { BrowserRouter } from "react-router-dom";`;
+const codeImportApp = `import { BrowserRouter } from "react-router-dom";`;
 
-const code_app = ` return (
+const codeApp = ` return (
   <div className="app">
     <BrowserRouter>
       <Header />
@@ -17,9 +17,9 @@ const code_app = ` return (
   </div>
 );`;
 
-const code_import_content = `import { Switch, Route, Redirect } from "react-router-dom";`;
+const codeImportContent = `import { Switch, Route, Redirect } from "react-router-dom";`;
 
-const code_content = ` return (
+const codeContent = ` return (
   <div className="content_right">
     <Redirect to="/home" />
     <Switch>
@@ -36,9 +36,9 @@ const code_content = ` return (
   </div>
 );`;
 
-const code_import_navbar = `import { NavLink } from "react-router-dom";`;
+const codeImportNav = `import { NavLink } from "react-router-dom";`;
 
-const code_navbar = ` return (
+const codeNav = ` return (
   <nav className="nav_left">
     <ul>
       <li>
@@ -71,7 +71,7 @@ function RouterPage() {
     <div className="router_page">
       <h1>Router</h1>
       <h2>Installation</h2>
-      <p className="consoleText monospace">yarn add react-router-dom</p>
+      <p className="console_text monospace">yarn add react-router-dom</p>
       <h2>Explanation and usage</h2>
       <p>
         3 “pages” handled by the router: a home page, a react clock page and a
@@ -82,24 +82,24 @@ function RouterPage() {
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_import_app}
+        {codeImportApp}
       </SyntaxHighlighter>
       <p>
-        The <span className="codeComponent">BrowserRouter</span> has to wrap all
-        components, which are using router (it means every component, which uses
-        switch, route and links or navlinks).
+        The <span className="code_component">BrowserRouter</span> has to wrap
+        all components, which are using router (it means every component, which
+        uses switch, route and links or navlinks).
       </p>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_app}
+        {codeApp}
       </SyntaxHighlighter>
       <p>
-        A <span className="codeComponent">Switch</span> listens to the path
+        A <span className="code_component">Switch</span> listens to the path
         (URL), than looks through its children -
-        <span className="codeComponent">Routes</span> and renders whatever is
+        <span className="code_component">Routes</span> and renders whatever is
         inside a matching route, for example a whole component.
       </p>
       <SyntaxHighlighter
@@ -107,46 +107,46 @@ function RouterPage() {
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_import_content}
+        {codeImportContent}
       </SyntaxHighlighter>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_content}
+        {codeContent}
       </SyntaxHighlighter>
       <p>
         As you click around on the different
-        <span className="codeComponent">NavLinks</span> in navigation, the
+        <span className="code_component">NavLinks</span> in navigation, the
         assigned path is sent to the URL address.
       </p>
       <p>
-        Behind the scenes the <span className="codeComponent">NavLink</span>
+        Behind the scenes the <span className="code_component">NavLink</span>
         renders an anchor tag with a real href, so people using the keyboard for
         navigation or screen readers will still be able to use this.
       </p>
       <p>
-        The difference between <span className="codeComponent">Link</span> and
-        <span className="codeComponent">NavLink</span> in that
-        <span className="codeComponent">Link</span> has no active class on
+        The difference between <span className="code_component">Link</span> and
+        <span className="code_component">NavLink</span> in that
+        <span className="code_component">Link</span> has no active class on
         selected element,
-        <span className="codeComponent">NavLink</span> is highlighted because an
-        active class has been added to this element.
+        <span className="code_component">NavLink</span> is highlighted because
+        an active class has been added to this element.
       </p>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_import_navbar}
+        {codeImportNav}
       </SyntaxHighlighter>
       <SyntaxHighlighter
         language="javascript"
         style={xonokai}
         className="syntax_highlighter"
       >
-        {code_navbar}
+        {codeNav}
       </SyntaxHighlighter>
     </div>
   );

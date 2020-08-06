@@ -1,7 +1,7 @@
-.todo_container {
-  color: black;
+.todo_page {
   width: 100%;
   min-height: 680px;
-  margin-bottom: 20px;
   overflow: hidden;
+  color: black;
+  margin-bottom: 20px;
 }

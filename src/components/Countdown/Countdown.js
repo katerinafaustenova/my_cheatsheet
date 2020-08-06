@@ -54,7 +54,7 @@ export class Countdown extends React.Component {
     }
 
     return (
-      <div className="countdown-wrapper consoleText">
+      <div className="countdown-wrapper console_text">
         {days !== 0 && (
           <div className="countdown-item">
             {days}

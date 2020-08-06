@@ -11,7 +11,7 @@ import "./Content.css";
 
 function Content() {
   return (
-    <div className="content_right">
+    <div className="content">
       <Redirect to="/home" />
       <Switch>
         <Route path="/home">

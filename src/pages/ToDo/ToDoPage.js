@@ -5,7 +5,7 @@ import ToDo from "./../../components/ToDo/ToDo";
 function ToDoPage() {
   return (
     <React.Fragment>
-      <div className="todo_container">
+      <div className="todo_page">
         <ToDo />
       </div>
       <p>

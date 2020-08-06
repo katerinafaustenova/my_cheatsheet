@@ -14,12 +14,11 @@ class Navbar extends React.Component {
     if (this.state.open !== par) {
       return this.setState(() => ({ open: par }));
     }
-    // this.setState(() => ({ open: "" }));
   };
 
   render() {
     return (
-      <nav className="nav_left">
+      <nav className="nav">
         <ul>
           <li>
             <NavLink
@@ -51,9 +50,6 @@ class Navbar extends React.Component {
                 Tip Calculator
               </NavLink>
             </div>
-            {/* {this.state.open === "React" && (
-                <span>hide / show</span>
-            )} */}
           </li>
         </ul>
       </nav>

@@ -21,7 +21,7 @@ class UserForm extends React.Component {
       [name]: value,
     });
   };
-  // mozna odstranit
+
   handleSignup = (e) => {
     this.handleChangeStav("welcome");
   };
@@ -115,7 +115,9 @@ class UserForm extends React.Component {
 
   renderMessage = () => {
     if (this.state.stav === "welcome") {
-      return <div className="message">Welcome user !</div>;
+      return (
+        <div className="message">{`Welcome user ${this.state.nickname} `}</div>
+      );
     } else if (this.state.stav === "newpassword") {
       return (
         <div className="message">
@@ -152,7 +154,7 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <div className="userform_container">
+      <div className="user_form_wrapper">
         <button onClick={() => this.handleChangeStav("login")}>Log In</button>
         <button onClick={() => this.handleChangeStav("signup")}>Sign Up</button>
         <button onClick={() => this.handleChangeStav("welcome")}>
@@ -164,7 +166,7 @@ class UserForm extends React.Component {
         <button onClick={() => this.handleChangeStav("newpassword")}>
           New Password Sent
         </button>
-        <div className="content_container">
+        <div className="user_form">
           {this.renderLogIn()}
           {this.renderSignUp()}
           {this.renderMessage()}

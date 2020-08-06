@@ -9,12 +9,12 @@
 }
 
 .time_components a {
-  margin: 20px auto;
-  padding: 10px 20px;
-  transition: 500ms;
   text-align: center;
   border: 1px solid #5a5a5a;
   border-radius: 3px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  transition: 500ms;
 }
 
 .time_components a:hover {
@@ -23,7 +23,7 @@
 }
 
 .italic {
-  font-style: italic;
   font-size: 14px;
+  font-style: italic;
   text-decoration: underline;
 }

@@ -40,21 +40,21 @@ class TipCalculator extends React.Component {
     return (
       <form className={styles.calculator}>
         <div className={styles.row}>
-          <div className={styles.billCurrency}>Kč</div>
+          <div className={styles.bill_currency}>Kč</div>
           <div className={styles.label}>Bill</div>
           <input
             type="number"
             id="bill"
             onChange={this.handleChange}
             min="0"
-            className={styles.billInput}
+            className={styles.bill_input}
           />
         </div>
         <div className={styles.row}>
           <div className={styles.label}>Tip</div>
           <div>{selectedOption} %</div>
         </div>
-        <div className={classnames(styles.row, styles.noPadding)}>
+        <div className={classnames(styles.row, styles.no_padding)}>
           <input
             type="range"
             min="0"
@@ -63,7 +63,7 @@ class TipCalculator extends React.Component {
             value={selectedOption}
             onChange={this.handleChange}
             step="5"
-            className={styles.rangeInput}
+            className={styles.range_input}
           ></input>
         </div>
         <div className={styles.line}></div>

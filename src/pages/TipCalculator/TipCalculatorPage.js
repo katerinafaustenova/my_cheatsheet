@@ -4,7 +4,7 @@ import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
 import TipCalculator from "../../components/TipCalculator/TipCalculator";
 import "./TipCalculatorPage.css";
 
-const code_calculator_state = `class TipCalculator extends React.Component {
+const codeCalculatorState = `class TipCalculator extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,7 +15,7 @@ const code_calculator_state = `class TipCalculator extends React.Component {
     };
   }`;
 
-const code_calculator_methods = `handleChange = (e) => {
+const codeCalculatorMethods = `handleChange = (e) => {
   e.preventDefault();
   this.setState(
     {
@@ -37,7 +37,7 @@ handleSubmit = () => {
   });
 };`;
 
-const code_calculator_render = `render() {
+const codeCalculatorRender = `render() {
   const { tip, total, selectedOption } = this.state;
   return (
     <form className={styles.calculator}>
@@ -83,7 +83,7 @@ const code_calculator_render = `render() {
 
 function TipCalculatorPage() {
   return (
-    <div className="tipCalculator_page">
+    <div className="calc_page">
       <h1>Tip Calculator</h1>
       <TipCalculator />
       <p>
@@ -99,7 +99,7 @@ function TipCalculatorPage() {
           style={xonokai}
           className="syntax_highlighter"
         >
-          {code_calculator_state}
+          {codeCalculatorState}
         </SyntaxHighlighter>
         <p>The handleChange method is called on any changes in the inputs.</p>
         <p>
@@ -117,7 +117,7 @@ function TipCalculatorPage() {
           style={xonokai}
           className="syntax_highlighter"
         >
-          {code_calculator_methods}
+          {codeCalculatorMethods}
         </SyntaxHighlighter>
         <p>
           There are two inputs in the render method - number for the amount of
@@ -131,7 +131,7 @@ function TipCalculatorPage() {
           style={xonokai}
           className="syntax_highlighter"
         >
-          {code_calculator_render}
+          {codeCalculatorRender}
         </SyntaxHighlighter>
       </div>
     </div>

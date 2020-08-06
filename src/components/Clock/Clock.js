@@ -37,7 +37,6 @@ class Clock extends React.Component {
     if (seconds < 10) {
       return `0${seconds}s`;
     }
-    //  {seconds < 10 ? `0${seconds}` : seconds}
     return `${seconds}s`;
   }
 
@@ -52,7 +51,7 @@ class Clock extends React.Component {
   renderTime() {
     const { hours } = this.state;
     return (
-      <div className="clock-wrapper consoleText">
+      <div className="clock-wrapper console_text">
         <div className="clock-item">{`${hours}h`}</div>
         <div className="clock-item">{this.getMinutes()}</div>
         <div className="clock-item">{this.getSeconds()}</div>

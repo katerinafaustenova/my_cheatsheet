@@ -10,8 +10,8 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Header />
-        <div className="app_content">
-          <div className="app_workspace">
+        <div className="app_wrapper_relative">
+          <div className="app_innerwrapper_absolute">
             <Navbar />
             <Content />
           </div>
