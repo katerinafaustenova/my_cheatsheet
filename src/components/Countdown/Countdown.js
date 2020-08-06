@@ -45,12 +45,12 @@ export class Countdown extends React.Component {
   render() {
     const { days, hours, minutes, seconds } = this.state;
 
-    if (hours + minutes + seconds <= "0") {
-      return <div className="countdown-wrapper">Konec odpočtu!</div>;
+    if (seconds === null) {
+      return <div className="countdown-wrapper loading">Loading...</div>;
     }
 
-    if (seconds === null || minutes === null) {
-      return <div className="countdown-wrapper loading">Loading...</div>;
+    if (days + hours + minutes + seconds <= 0) {
+      return <div className="countdown-wrapper">Konec odpočtu!</div>;
     }
 
     return (

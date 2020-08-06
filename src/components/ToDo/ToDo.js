@@ -63,6 +63,8 @@ class ToDo extends React.Component {
     });
   };
 
+  // ověřit nutnost handleEditChange, případně zamknout ostatní itemy pro edit
+
   confirmEdit = (key) => {
     const items = this.state.items;
     const { editedItemKey, editedItemValue } = this.state;

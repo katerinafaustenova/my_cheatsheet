@@ -13,7 +13,7 @@ function App() {
         <div className="app_wrapper_relative">
           <div className="app_innerwrapper_absolute">
             <Navbar />
-            <Content />
+            <Content/>
           </div>
         </div>
       </BrowserRouter>
