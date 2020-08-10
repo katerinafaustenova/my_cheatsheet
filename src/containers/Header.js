@@ -5,7 +5,7 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header">
-      <Link to="/home">
+      <Link to={`${process.env.PUBLIC_URL}/`}>
         <span>My Cheatsheet</span>
       </Link>
     </header>

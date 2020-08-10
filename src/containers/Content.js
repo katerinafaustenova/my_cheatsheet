@@ -12,9 +12,9 @@ import "./Content.css";
 function Content() {
   return (
     <div className="content">
-      <Redirect to="/home" />
+      <Redirect to={`${process.env.PUBLIC_URL}/`} />
       <Switch>
-        <Route path="/home">
+        <Route path={`${process.env.PUBLIC_URL}/`}>
           <Home />
         </Route>
         <Route path="/React/UserFormPage">
