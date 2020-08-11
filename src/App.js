@@ -1,9 +1,9 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./containers/Header";
 import Navbar from "./containers/Navbar";
 import Content from "./containers/Content";
+import "./App.css";
 
 function App() {
   return (
