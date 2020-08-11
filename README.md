@@ -4,6 +4,7 @@
 * Clone this repo
 * Run `yarn install`
 * Run `yarn start`
+---
 
 This cheatsheet is a helpful tool for frontend development, which I've started to work on around beggining of the Covid 19.
 
