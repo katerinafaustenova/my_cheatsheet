@@ -32,6 +32,7 @@ li a:hover {
   color: var(--active_color);
   border-left: 2px solid var(--active_color);
 }
+
 .active {
   background-color: var(--content_color);
 }
@@ -50,6 +51,7 @@ li a:hover {
   border-left: 2px solid var(--content_color);
   padding-left: 30px;
 }
+
 .dropdown .active {
   background-color: var(--content_color);
   border-left: 2px solid var(--content_color);
