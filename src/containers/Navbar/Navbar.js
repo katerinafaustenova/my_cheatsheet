@@ -1,41 +1,34 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { DropdownData } from "./DropdownData";
-import "./Navbar.css";
+import { DropdownData } from "./dropdownData";
+import styles from "./Navbar.module.css";
 
 class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      open: "React",
       dropdownItems: DropdownData,
     };
   }
 
-  handleClick = (par) => {
-    if (this.state.open !== par) {
-      return this.setState(() => ({ open: par }));
-    }
-  };
-
   render() {
+    const style = {
+      backgroundColor: "var(--content_color)",
+      color: "var(--active_color)",
+    };
+
     return (
-      <nav className="nav">
-        <ul>
-          <li>
-            <NavLink
-              to="/React"
-              exact
-              onClick={() => this.handleClick("React")}
-              className={this.state.open === "React" ? "activeTitle" : null}
-            >
+      <nav className={styles.nav}>
+        <ul className={styles.ul}>
+          <li className={styles.li}>
+            <NavLink to="/React" exact className={styles.activeTitle}>
               React
             </NavLink>
-            <div className="dropdown">
+            <div className={styles.dropdown}>
               {this.state.dropdownItems.map((item) => {
                 return (
                   <span key={item.path}>
-                    <NavLink to={item.path} exact>
+                    <NavLink to={item.path} activeStyle={style} exact>
                       {item.name}
                     </NavLink>
                   </span>

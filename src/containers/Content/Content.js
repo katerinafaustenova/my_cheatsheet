@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./Home";
-import UserFormPage from "../pages/UserFormPage";
-import RouterPage from "../pages/Router/RouterPage";
-import StatePropsPage from "../pages/StateProps/StatePropsPage";
-import ToDoPage from "../pages/ToDo/ToDoPage";
-import TimeComponentsPage from "../pages/TimeComponents/TimeComponentsPage";
-import TipCalculatorPage from "../pages/TipCalculator/TipCalculatorPage";
+import Home from "../Home/Home";
+import UserFormPage from "../../pages/UserFormPage";
+import RouterPage from "../../pages/Router/RouterPage";
+import StatePropsPage from "../../pages/StateProps/StatePropsPage";
+import ToDoPage from "../../pages/ToDo/ToDoPage";
+import TimeComponentsPage from "../../pages/TimeComponents/TimeComponentsPage";
+import TipCalculatorPage from "../../pages/TipCalculator/TipCalculatorPage";
 import "./Content.css";
 
 function Content() {

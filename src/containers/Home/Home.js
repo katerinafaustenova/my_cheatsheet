@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Box from "./../components/Box/Box";
+import Box from "./../../components/Box/Box";
 import "./Home.css";
 
 class Home extends React.Component {
@@ -16,7 +16,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <div className="progress">
+        <div className="title">
           <h2>In progress....</h2>
         </div>
         {this.state.best.map((item) => (

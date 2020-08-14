@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./containers/Header";
+import Header from "./containers/Header/Header";
 import Navbar from "./containers/Navbar/Navbar";
-import Content from "./containers/Content";
+import Content from "./containers/Content/Content";
 import "./App.css";
 
 function App() {

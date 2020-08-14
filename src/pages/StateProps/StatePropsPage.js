@@ -1,40 +1,11 @@
 import React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Syntax from "./../../components/Syntax/Syntax";
+import {
+  CodeHomeState,
+  CodeHomeRender,
+  CodeBoxProps,
+} from "./statepropsSnippet";
 import "./StateProps.css";
-
-const codeHomeState = ` class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      best: [
-        { category: "React", sub: "Router", title: "Router" },
-        { category: "React", sub: "StateProps", title: "State and Props" },
-      ],
-    };
-  }`;
-
-// eslint-disable-next-line
-const path = "`/${item.category}/${item.sub}`";
-
-const codeHomeRender = ` render() {
-  return (
-    <div className="home">
-      {this.state.best.map((item) => (
-        <NavLink
-          to={${path}}
-          key={${path}}
-        >
-          <Box title={item.title === "" ? item.sub : item.title} />
-        </NavLink>
-      ))}
-    </div>
-  );
-}`;
-
-const codeBoxProps = `function Box(props) {
-  return <div className="box">{props.title}</div>;
-}`;
 
 function StatePropsPage() {
   return (
@@ -70,20 +41,8 @@ function StatePropsPage() {
         State changes are asynchronous. If we read from this.state immediately
         after calling this.setState, it probably won’t reflect the changes yet.
       </p>
-      <SyntaxHighlighter
-        language="javascript"
-        style={xonokai}
-        className="syntax_highlighter"
-      >
-        {codeHomeState}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter
-        language="javascript"
-        style={xonokai}
-        className="syntax_highlighter"
-      >
-        {codeHomeRender}
-      </SyntaxHighlighter>
+      <Syntax>{CodeHomeState}</Syntax>
+      <Syntax>{CodeHomeRender}</Syntax>
       <p>
         React props (properties) allow us to pass some data from one component
         to another.
@@ -101,13 +60,7 @@ function StatePropsPage() {
         use props keyword to pass it to its children as shown below with the Box
         component.
       </p>
-      <SyntaxHighlighter
-        language="javascript"
-        style={xonokai}
-        className="syntax_highlighter"
-      >
-        {codeBoxProps}
-      </SyntaxHighlighter>
+      <Syntax>{CodeBoxProps}</Syntax>
     </div>
   );
 }

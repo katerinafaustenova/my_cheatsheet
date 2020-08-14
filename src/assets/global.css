@@ -27,7 +27,7 @@ p {
 }
 
 a {
-  color: var(--link_color);
+  color: var(--text_color);
   text-decoration: none;
 }
 
@@ -67,3 +67,16 @@ a:active {
   max-width: 950px;
   margin: 30px auto;
 }
+
+.active {
+  background-color: var(--content_color);
+  border-left: 2px solid var(--content_color);
+  color: var(--active_color);
+  padding-left: 30px;
+}
+
+/* .li .active,
+.li .activeTitle {
+  color: var(--active_color);
+  border-left: 2px solid var(--active_color);
+} */
