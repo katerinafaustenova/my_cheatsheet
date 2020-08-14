@@ -5,11 +5,10 @@ import {
   CodeHomeRender,
   CodeBoxProps,
 } from "./statepropsSnippet";
-import "./StateProps.css";
 
 function StatePropsPage() {
   return (
-    <div className="stateprops_page">
+    <div className="page">
       <h1>State and Props</h1>
       <h2>Explanation and usage</h2>
       <p>

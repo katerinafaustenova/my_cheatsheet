@@ -26,10 +26,11 @@ class Navbar extends React.Component {
             </NavLink>
             <div className={styles.dropdown}>
               {this.state.dropdownItems.map((item) => {
+                const { path, name } = item;
                 return (
-                  <span key={item.path}>
-                    <NavLink to={item.path} activeStyle={style} exact>
-                      {item.name}
+                  <span key={path}>
+                    <NavLink to={path} activeStyle={style} exact>
+                      {name}
                     </NavLink>
                   </span>
                 );

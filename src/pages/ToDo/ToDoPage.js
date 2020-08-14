@@ -1,11 +1,11 @@
 import React from "react";
-import "./ToDoPage.css";
 import ToDo from "./../../components/ToDo/ToDo";
+import styles from "./ToDoPage.module.css";
 
 function ToDoPage() {
   return (
     <React.Fragment>
-      <div className="todo_page">
+      <div className={styles.page}>
         <ToDo />
       </div>
       <p>

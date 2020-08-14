@@ -7,26 +7,27 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      best: [
+      boxes: [
         { category: "React", sub: "RouterPage", title: "Router" },
         { category: "React", sub: "StatePropsPage", title: "State and Props" },
       ],
     };
   }
+
   render() {
     return (
       <div className="home">
         <div className="title">
-          <h2>In progress....</h2>
+          <h2>In progress...</h2>
         </div>
-        {this.state.best.map((item) => (
-          <NavLink
-            to={`/${item.category}/${item.sub}`}
-            key={`/${item.category}/${item.sub}`}
-          >
-            <Box title={item.title === "" ? item.sub : item.title} />
-          </NavLink>
-        ))}
+        {this.state.boxes.map((item) => {
+          const { category, sub, title } = item;
+          return (
+            <NavLink to={`/${category}/${sub}`} key={`/${category}/${sub}`}>
+              <Box title={title === "" ? sub : title} />
+            </NavLink>
+          );
+        })}
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React from "react";
 import { Countdown } from "../../components/Countdown/Countdown";
 import Clock from "../../components/Clock/Clock";
-import "./TimeComponentsPage.css";
+import styles from "./TimeComponentsPage.module.css";
 
 function TimeComponentsPage() {
   return (
-    <div className="time_components">
+    <div className={styles.wrapper}>
       <h1>Clock</h1>
       <Clock />
       <p>
@@ -33,7 +33,7 @@ function TimeComponentsPage() {
       </p>
       <h1>Countdown</h1>
       <Countdown futureDate="2020-12-31 23:59:59" />
-      <p className="italic">
+      <p className={styles.italic}>
         This Countdown is set to the 31. 12. 2020 for demonstration.
       </p>
       <p>I've used library called MomentJS for the countdown component.</p>

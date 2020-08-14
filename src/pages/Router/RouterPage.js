@@ -8,11 +8,10 @@ import {
   CodeImportNav,
   CodeNav,
 } from "./routerSnippet";
-import "./Router.css";
 
 function RouterPage() {
   return (
-    <div className="router_page">
+    <div className="page">
       <h1>Router</h1>
       <h2>Installation</h2>
       <p className="console_text monospace">yarn add react-router-dom</p>

@@ -1,15 +1,14 @@
-.time_components {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.time_components h1 {
+.wrapper h1 {
   margin: 30px 0;
 }
 
-.time_components a {
-  text-align: center;
+.wrapper a {
   border: 1px solid #5a5a5a;
   border-radius: 3px;
   margin: 20px auto;
@@ -17,7 +16,7 @@
   transition: 500ms;
 }
 
-.time_components a:hover {
+.wrapper a:hover {
   cursor: pointer;
   transform: scale(1.05);
 }

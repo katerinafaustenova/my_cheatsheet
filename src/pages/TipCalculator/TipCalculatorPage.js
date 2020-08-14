@@ -6,11 +6,10 @@ import {
   CodeCalculatorRender,
 } from "./calculatorSnippet";
 import TipCalculator from "../../components/TipCalculator/TipCalculator";
-import "./TipCalculatorPage.css";
 
 function TipCalculatorPage() {
   return (
-    <div className="calc_page">
+    <div className="page">
       <h1>Tip Calculator</h1>
       <TipCalculator />
       <p>
