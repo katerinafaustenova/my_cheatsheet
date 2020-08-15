@@ -1,17 +1,19 @@
 import React from "react";
+import { Button } from "./../Button/Button";
 import "./UserForm.css";
 
 class UserForm extends React.Component {
   constructor() {
     super();
     this.state = {
+      controls: ["Log In", "signup", "welcome", "lostpassword", "newpassword"],
       nickname: "",
       signupEmail: "",
       signupPassword: "",
       dummyData: { email: "test@test.cz", password: "12345678" },
       email: "",
       password: "",
-      stav: "login",
+      stav: "",
     };
   }
 
@@ -39,7 +41,7 @@ class UserForm extends React.Component {
   };
 
   renderLogIn = () => {
-    if (this.state.stav === "login") {
+    if (this.state.stav === "Log In") {
       return (
         <form onSubmit={this.handleLogin} className="login form">
           <input
@@ -146,17 +148,25 @@ class UserForm extends React.Component {
     return;
   };
 
-  handleChangeStav(value) {
+  handleChangeStav = (value) => {
     this.setState({
       stav: value,
     });
-  }
+  };
 
   render() {
+    const { controls } = this.state;
     return (
       <div className="user_form_wrapper">
-        <button onClick={() => this.handleChangeStav("login")}>Log In</button>
-        <button onClick={() => this.handleChangeStav("signup")}>Sign Up</button>
+        {controls.map((item) => (
+          <Button
+            handleChange={this.handleChangeStav}
+            title={item}
+            key={item}
+          />
+        ))}
+
+        {/* <button onClick={() => this.handleChangeStav("signup")}>Sign Up</button>
         <button onClick={() => this.handleChangeStav("welcome")}>
           Welcome Page
         </button>
@@ -165,7 +175,7 @@ class UserForm extends React.Component {
         </button>
         <button onClick={() => this.handleChangeStav("newpassword")}>
           New Password Sent
-        </button>
+        </button> */}
         <div className="user_form">
           {this.renderLogIn()}
           {this.renderSignUp()}

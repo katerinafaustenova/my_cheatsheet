@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./TipCalculator.module.css";
 import classnames from "classnames";
+import styles from "./TipCalculator.module.css";
 
 class TipCalculator extends React.Component {
   constructor() {

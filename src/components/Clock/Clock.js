@@ -48,19 +48,15 @@ class Clock extends React.Component {
     return `${minutes}m`;
   }
 
-  renderTime() {
+  render() {
     const { hours } = this.state;
     return (
-      <div className="clock-wrapper console_text">
-        <div className="clock-item">{`${hours}h`}</div>
-        <div className="clock-item">{this.getMinutes()}</div>
-        <div className="clock-item">{this.getSeconds()}</div>
+      <div className="clock_wrapper console_text">
+        <div className="clock_item">{`${hours}h`}</div>
+        <div className="clock_item">{this.getMinutes()}</div>
+        <div className="clock_item">{this.getSeconds()}</div>
       </div>
     );
-  }
-
-  render() {
-    return <React.Fragment>{this.renderTime()}</React.Fragment>;
   }
 }
 

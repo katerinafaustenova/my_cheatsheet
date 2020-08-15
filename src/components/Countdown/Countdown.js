@@ -46,30 +46,30 @@ export class Countdown extends React.Component {
     const { days, hours, minutes, seconds } = this.state;
 
     if (seconds === null) {
-      return <div className="countdown-wrapper loading">Loading...</div>;
+      return <div className="countdown_wrapper loading">Loading...</div>;
     }
 
     if (days + hours + minutes + seconds <= 0) {
-      return <div className="countdown-wrapper">Konec odpočtu!</div>;
+      return <div className="countdown_wrapper">Konec odpočtu!</div>;
     }
 
     return (
-      <div className="countdown-wrapper console_text">
+      <div className="countdown_wrapper console_text">
         {days !== 0 && (
-          <div className="countdown-item">
+          <div className="countdown_item">
             {days}
             <span>dní</span>
           </div>
         )}
-        <div className="countdown-item">
+        <div className="countdown_item">
           {hours}
           <span>hodin</span>
         </div>
-        <div className="countdown-item">
+        <div className="countdown_item">
           {minutes}
           <span>minut</span>
         </div>
-        <div className="countdown-item seconds">
+        <div className="countdown_item seconds">
           {seconds}
           <span>vteřin</span>
         </div>

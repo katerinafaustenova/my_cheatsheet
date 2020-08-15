@@ -7,13 +7,14 @@ import "./ToDoItems.css";
 
 function ToDoItems(props) {
   const { items, editable } = props;
+  
   return (
     <div className="todo_items">
       {items.map((item) => {
         return (
-          <Paper style={{ margin: 10 }}>
+          <Paper style={{ margin: 10 }} key={item.key}>
             <List style={{ padding: 0 }}>
-              <ListItem key={item.key}>
+              <ListItem>
                 <Input
                   readOnly={item.key !== editable}
                   defaultValue={item.text}
@@ -26,21 +27,33 @@ function ToDoItems(props) {
                     item.key === editable ? "item_input editable" : "item_input"
                   }
                 />
+
                 {item.key === editable ? (
-                  <IconButton aria-label="done" style={{ color: "green" }}>
-                    <DoneIcon
-                      onClick={() => {
-                        props.confirmEdit(item.key);
-                      }}
-                    />
+                  <IconButton
+                    aria-label="done"
+                    style={{ color: "green" }}
+                    onClick={() => {
+                      props.confirmEdit(item.key);
+                    }}
+                  >
+                    <DoneIcon />
                   </IconButton>
                 ) : (
-                  <IconButton aria-label="edit" color="primary">
-                    <EditIcon onClick={() => props.editItem(item.key)} />
+                  <IconButton
+                    aria-label="edit"
+                    color="primary"
+                    onClick={() => props.editItem(item.key)}
+                  >
+                    <EditIcon />
                   </IconButton>
                 )}
-                <IconButton aria-label="delete" color="secondary">
-                  <DeleteIcon onClick={() => props.deleteItem(item.key)} />
+
+                <IconButton
+                  aria-label="delete"
+                  color="secondary"
+                  onClick={() => props.deleteItem(item.key)}
+                >
+                  <DeleteIcon />
                 </IconButton>
               </ListItem>
             </List>

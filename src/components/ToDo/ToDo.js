@@ -7,14 +7,11 @@ class ToDo extends React.Component {
     super();
     this.state = {
       items: [
-        { text: "test1", key: "test1" },
-        { text: "test2", key: "test2" },
-        { text: "test3", key: "test3" },
+        { text: "test 1", key: "1597503634867" },
+        { text: "test 2", key: "1597503634857" },
+        { text: "test 3", key: "1597503634869" },
       ],
-      currentItem: {
-        text: "",
-        key: "",
-      },
+      newItem: "",
       editedItemKey: "",
       editedItemValue: "",
     };
@@ -22,30 +19,27 @@ class ToDo extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      currentItem: {
-        text: e.target.value,
-        key: Date.now(),
-      },
+      newItem: e.target.value,
     });
   };
 
   addNewItem = (e) => {
     e.preventDefault();
-    const newItem = this.state.currentItem;
-    if (newItem.text !== "") {
-      const newItems = [...this.state.items, newItem];
+
+    let item = { text: this.state.newItem, key: Date.now() };
+
+    if (item.text !== "") {
+      const newItems = [...this.state.items, item];
       this.setState({
         items: newItems,
-        currentItem: {
-          text: "",
-          key: "",
-        },
+        newItem: "",
       });
     }
   };
 
   deleteItem = (key) => {
     const filteredItems = this.state.items.filter((item) => item.key !== key);
+
     this.setState({
       items: filteredItems,
     });
@@ -62,12 +56,10 @@ class ToDo extends React.Component {
       editedItemValue: e.target.value,
     });
   };
-
-  // ověřit nutnost handleEditChange, případně zamknout ostatní itemy pro edit
-
+  // WTF
   confirmEdit = (key) => {
-    const items = this.state.items;
     const { editedItemKey, editedItemValue } = this.state;
+    const items = this.state.items;
 
     items.forEach((item) => {
       if (item.key === editedItemKey) {
@@ -83,7 +75,8 @@ class ToDo extends React.Component {
   };
 
   render() {
-    const { currentItem, items, editedItemKey } = this.state;
+    const { newItem, items, editedItemKey } = this.state;
+
     return (
       <Container
         maxWidth="sm"
@@ -98,7 +91,7 @@ class ToDo extends React.Component {
               id="outlined-basic"
               variant="outlined"
               label="New item"
-              value={currentItem.text}
+              value={newItem}
               onChange={this.handleChange}
             />
             <Box m={2}>
