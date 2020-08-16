@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "../Home/Home";
-import UserFormPage from "../../pages/UserFormPage";
+import LoginPage from "../../pages/LoginPage";
 import RouterPage from "../../pages/Router/RouterPage";
 import StatePropsPage from "../../pages/StateProps/StatePropsPage";
 import ToDoPage from "../../pages/ToDo/ToDoPage";
@@ -17,8 +17,8 @@ function Content() {
         <Route path={`${process.env.PUBLIC_URL}/`}>
           <Home />
         </Route>
-        <Route path="/React/UserFormPage">
-          <UserFormPage />
+        <Route path="/React/LoginPage">
+          <LoginPage />
         </Route>
         <Route path="/React/RouterPage">
           <RouterPage />

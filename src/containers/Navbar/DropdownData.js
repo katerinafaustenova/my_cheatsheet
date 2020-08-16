@@ -1,5 +1,5 @@
 export const DropdownData = [
-  { path: "/React/UserFormPage", name: "User Form" },
+  { path: "/React/LoginPage", name: "Login" },
   { path: "/React/RouterPage", name: "Router" },
   { path: "/React/StatePropsPage", name: "State and Props" },
   { path: "/React/ToDoPage", name: "To Do List" },

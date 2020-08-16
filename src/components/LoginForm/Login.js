@@ -1,6 +1,8 @@
 import React from "react";
+import classnames from "classnames";
+import styles from "./Login.module.css";
 
-class Form extends React.Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -23,11 +25,8 @@ class Form extends React.Component {
 
   validationLogin = (e) => {
     e.preventDefault();
-    const { dummyData } = this.state;
-    if (
-      this.state.email !== dummyData.email ||
-      this.state.password !== dummyData.password
-    ) {
+    const { dummyData, email, password } = this.state;
+    if (email !== dummyData.email || password !== dummyData.password) {
       alert("Invalid email address or password");
     } else {
       this.props.handleChangeCurrentState("Logged in message");
@@ -37,7 +36,7 @@ class Form extends React.Component {
   renderLoginForm = () => {
     const { email, password } = this.state;
     return (
-      <form onSubmit={this.validationLogin} className="login form">
+      <form onSubmit={this.validationLogin} className={styles.form}>
         <input
           type="email"
           placeholder="E-mail"
@@ -56,17 +55,17 @@ class Form extends React.Component {
           minLength="4"
         />
         <input type="submit" value="Log In" />
-        <div className="form_footer">
+        <div className={styles.footer}>
           <div
-            className="form_footer_item"
+            className={styles.footer_item}
             onClick={() =>
-              this.props.handleChangeCurrentState("Forgot password ?")
+              this.props.handleChangeCurrentState("Forgot password")
             }
           >
             Forgot password ?
           </div>
           <div
-            className="form_footer_item"
+            className={styles.footer_item}
             onClick={() => this.props.handleChangeCurrentState("Sign Up")}
           >
             Don't have an account yet ?
@@ -82,7 +81,7 @@ class Form extends React.Component {
         onSubmit={() =>
           this.props.handleChangeCurrentState("New password sent message")
         }
-        className="lostpassword form"
+        className={classnames(styles.form, styles.lostpassword)}
       >
         <h2>Forgot password ?</h2>
         <input
@@ -99,19 +98,20 @@ class Form extends React.Component {
   };
 
   renderSignUpForm = () => {
+    const { nickname, signupEmail, signupPassword } = this.state;
     return (
       <form
         id="signupform"
         onSubmit={() =>
           this.props.handleChangeCurrentState("Signed up message")
         }
-        className="signup form"
+        className={styles.form}
       >
         <input
           type="text"
           placeholder="Nickname"
           name="nickname"
-          value={this.state.nickname}
+          value={nickname}
           onChange={this.handleChange}
           required
         />
@@ -119,7 +119,7 @@ class Form extends React.Component {
           type="email"
           placeholder="E-mail"
           name="signupEmail"
-          value={this.state.signupEmail}
+          value={signupEmail}
           onChange={this.handleChange}
           required
         />
@@ -127,23 +127,25 @@ class Form extends React.Component {
           type="password"
           placeholder="Password"
           name="signupPassword"
-          value={this.state.signupPassword}
+          value={signupPassword}
           onChange={this.handleChange}
           required
         />
         <input type="submit" value="Sign Up" />
-        <div
-          className="form_footer"
-          onClick={() => this.props.handleChangeCurrentState("Log In")}
-        >
-          Already have an account ?
+        <div className={styles.footer}>
+          <div
+            className={styles.footer_item}
+            onClick={() => this.props.handleChangeCurrentState("Log In")}
+          >
+            Already have an account ?
+          </div>
         </div>
       </form>
     );
   };
 
   renderMessage = (title) => {
-    return <div className="message">{title}</div>;
+    return <div className={styles.message}>{title}</div>;
   };
 
   renderConditionally = () => {
@@ -152,7 +154,7 @@ class Form extends React.Component {
       return this.renderLoginForm();
     } else if (currentState === "Sign Up") {
       return this.renderSignUpForm();
-    } else if (currentState === "Forgot password ?") {
+    } else if (currentState === "Forgot password") {
       return this.renderLostPasswordForm();
     } else if (currentState === "Logged in message") {
       return this.renderMessage("You are successfully logged in.");
@@ -172,4 +174,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default Login;

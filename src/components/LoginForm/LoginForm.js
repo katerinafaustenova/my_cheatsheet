@@ -1,16 +1,16 @@
 import React from "react";
-import { Button } from "./../Button/Button";
-import Form from "./Form";
-import "./UserForm.css";
+import { Button } from "../Button/Button";
+import Login from "./Login";
+import styles from "./LoginForm.module.css";
 
-class UserForm extends React.Component {
+class LoginForm extends React.Component {
   constructor() {
     super();
     this.state = {
       controls: [
         "Log In",
         "Sign Up",
-        "Forgot password ?",
+        "Forgot password",
         "Logged in message",
         "Signed up message",
         "New password sent message",
@@ -28,23 +28,25 @@ class UserForm extends React.Component {
   render() {
     const { controls, currentState } = this.state;
     return (
-      <div className="user_form_wrapper">
-        {controls.map((item) => (
-          <Button
-            handleChangeCurrentState={this.handleChangeCurrentState}
-            title={item}
-            key={item}
-          />
-        ))}
-        <div className="user_form">
-          <Form
+      <React.Fragment>
+        <div className={styles.controlButtons}>
+          {controls.map((item) => (
+            <Button
+              handleChangeCurrentState={this.handleChangeCurrentState}
+              title={item}
+              key={item}
+            />
+          ))}
+        </div>
+        <div className={styles.form}>
+          <Login
             currentState={currentState}
             handleChangeCurrentState={this.handleChangeCurrentState}
           />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
 
-export default UserForm;
+export default LoginForm;

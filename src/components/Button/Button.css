@@ -1,0 +1,20 @@
+.button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  margin: 20px 10px;
+  padding: 5px 5px;
+  transition: transform 0.5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.button:focus {
+  outline: none;
+  color: var(--active_color);
+  border-bottom: 1px solid var(--active_color);
+}

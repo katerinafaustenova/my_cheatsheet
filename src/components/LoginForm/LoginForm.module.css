@@ -1,0 +1,11 @@
+.controlButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.form {
+  height: 70vh;
+  background-color: rgb(1, 80, 80);
+  padding: 50px;
+}
