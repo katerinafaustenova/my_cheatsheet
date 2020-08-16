@@ -75,10 +75,15 @@
   color: white;
   font-size: 14px;
   margin: 60px auto 0;
+}
+
+.form_footer_item {
+  text-align: center;
+  padding: 10px 0;
   transition: 500ms;
 }
 
-.form_footer:hover {
+.form_footer_item:hover {
   cursor: pointer;
   transform: scale(1.05);
 }

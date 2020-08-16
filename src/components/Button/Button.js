@@ -6,7 +6,7 @@ export function Button(props) {
     <button
       className="button"
       onClick={() => {
-        props.handleChange(props.title);
+        props.handleChangeCurrentState(props.title);
       }}
     >
       {props.title}
@@ -19,7 +19,7 @@ export function FormButton(props) {
     <button
       className="form_button"
       onClick={() => {
-        props.handleChange(props.title);
+        props.handleChangeCurrentState(props.title);
       }}
     >
       {props.title}

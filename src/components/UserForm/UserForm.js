@@ -1,186 +1,46 @@
 import React from "react";
 import { Button } from "./../Button/Button";
+import Form from "./Form";
 import "./UserForm.css";
 
 class UserForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      controls: ["Log In", "signup", "welcome", "lostpassword", "newpassword"],
-      nickname: "",
-      signupEmail: "",
-      signupPassword: "",
-      dummyData: { email: "test@test.cz", password: "12345678" },
-      email: "",
-      password: "",
-      stav: "",
+      controls: [
+        "Log In",
+        "Sign Up",
+        "Forgot password ?",
+        "Logged in message",
+        "Signed up message",
+        "New password sent message",
+      ],
+      currentState: "Log In",
     };
   }
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
+  handleChangeCurrentState = (value) => {
     this.setState({
-      [name]: value,
-    });
-  };
-
-  handleSignup = (e) => {
-    this.handleChangeStav("welcome");
-  };
-
-  handleLogin = (e) => {
-    e.preventDefault();
-    if (
-      this.state.email !== this.state.dummyData.email ||
-      this.state.password !== this.state.dummyData.password
-    ) {
-      alert("Invalid email address or password");
-    } else {
-      this.handleChangeStav("welcome");
-    }
-  };
-
-  renderLogIn = () => {
-    if (this.state.stav === "Log In") {
-      return (
-        <form onSubmit={this.handleLogin} className="login form">
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-            minLength="8"
-          />
-          <input type="submit" value="Log In" />
-          <div
-            className="form_footer"
-            onClick={() => this.handleChangeStav("lostpassword")}
-          >
-            Forgot password ?
-          </div>
-        </form>
-      );
-    }
-    return;
-  };
-
-  renderSignUp = () => {
-    if (this.state.stav === "signup") {
-      return (
-        <form onSubmit={this.handleSignup} className="signup form">
-          <input
-            type="text"
-            placeholder="Nickname"
-            name="nickname"
-            value={this.state.nickname}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            name="signupEmail"
-            value={this.state.signupEmail}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            name="signupPassword"
-            value={this.state.signupPassword}
-            onChange={this.handleChange}
-            required
-          />
-          <input type="submit" value="Sign Up" />
-          <div
-            className="form_footer"
-            onClick={() => this.handleChangeStav("login")}
-          >
-            Already have an account ?
-          </div>
-        </form>
-      );
-    }
-    return;
-  };
-
-  renderMessage = () => {
-    if (this.state.stav === "welcome") {
-      return (
-        <div className="message">{`Welcome user ${this.state.nickname} `}</div>
-      );
-    } else if (this.state.stav === "newpassword") {
-      return (
-        <div className="message">
-          We've just sent you a link to your new password on entered email
-          address.
-        </div>
-      );
-    }
-    return;
-  };
-
-  renderLostPassword = () => {
-    if (this.state.stav === "lostpassword") {
-      return (
-        <form className="lostpassword form">
-          <h2>Forgot password ?</h2>
-          <input type="email" placeholder="Email" />
-          <input
-            type="submit"
-            value="Send new password"
-            onClick={() => this.handleChangeStav("newpassword")}
-          />
-        </form>
-      );
-    }
-    return;
-  };
-
-  handleChangeStav = (value) => {
-    this.setState({
-      stav: value,
+      currentState: value,
     });
   };
 
   render() {
-    const { controls } = this.state;
+    const { controls, currentState } = this.state;
     return (
       <div className="user_form_wrapper">
         {controls.map((item) => (
           <Button
-            handleChange={this.handleChangeStav}
+            handleChangeCurrentState={this.handleChangeCurrentState}
             title={item}
             key={item}
           />
         ))}
-
-        {/* <button onClick={() => this.handleChangeStav("signup")}>Sign Up</button>
-        <button onClick={() => this.handleChangeStav("welcome")}>
-          Welcome Page
-        </button>
-        <button onClick={() => this.handleChangeStav("lostpassword")}>
-          Forgot Password ?
-        </button>
-        <button onClick={() => this.handleChangeStav("newpassword")}>
-          New Password Sent
-        </button> */}
         <div className="user_form">
-          {this.renderLogIn()}
-          {this.renderSignUp()}
-          {this.renderMessage()}
-          {this.renderLostPassword()}
+          <Form
+            currentState={currentState}
+            handleChangeCurrentState={this.handleChangeCurrentState}
+          />
         </div>
       </div>
     );
