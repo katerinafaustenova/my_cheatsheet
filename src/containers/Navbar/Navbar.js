@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { DropdownData } from "./dropdownData";
+import { DropdownData } from "./DropdownData";
 import styles from "./Navbar.module.css";
 
 class Navbar extends React.Component {
