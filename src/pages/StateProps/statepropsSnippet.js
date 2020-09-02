@@ -1,5 +1,5 @@
 export const CodeHomeState = ` class Home extends React.Component {
-    export constructor() {
+    constructor() {
       super();
       this.state = {
         best: [
